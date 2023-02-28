@@ -1,9 +1,9 @@
-# Table of contents
-# Learn more at https://jupyterbook.org/customize/toc.html
+# This file is part of OpenScan-Hardware
+# Copyright 2023 OpenScan Contributors
+# SPDX-License-Identifier: CC-BY-SA-4.0
 
 format: jb-book
 root: intro
 chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
+  - file: obba
+  - file: tpm
