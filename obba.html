@@ -1,0 +1,730 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Conventions for documenting optical breadboard assemblies &#8212; OpenScan Hardware</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'obba';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="OpenScan two-photon microscope" href="tpm.html" />
+    <link rel="prev" title="OpenScan Hardware" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">OpenScan Hardware</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    OpenScan Hardware
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Conventions for documenting optical breadboard assemblies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tpm.html">OpenScan two-photon microscope</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/openscan-lsm/OpenScan-Hardware" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/openscan-lsm/OpenScan-Hardware/issues/new?title=Issue%20on%20page%20%2Fobba.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/obba.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Conventions for documenting optical breadboard assemblies</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#on-modularity">On modularity</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-we-need-modular-descriptions">Why we need modular descriptions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#separation-of-concerns">Separation of concerns</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#degrees-of-freedom">Degrees of freedom</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-tradeoffs">Practical tradeoffs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optomechanical-systems">Optomechanical systems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overall-layout-and-design">Overall layout and design</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alignment">Alignment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aligning-a-laser-beam-to-the-table">Aligning a laser beam to the table</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aligning-a-laser-beam-to-an-optical-component">Aligning a laser beam to an optical component</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aligning-optical-components-to-a-laser-beam">Aligning optical components to a laser beam</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aligning-with-a-periscope">Aligning with a periscope</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aligning-with-a-microscope-body">Aligning with a microscope body</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thoughts-on-hardware-beyond-optics-and-photonics">Thoughts on hardware beyond optics and photonics</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <!--
+This file is part of OpenScan-Hardware
+Copyright 2023 OpenScan Contributors
+SPDX-License-Identifier: CC-BY-SA-4.0
+-->
+<section class="tex2jax_ignore mathjax_ignore" id="conventions-for-documenting-optical-breadboard-assemblies">
+<h1>Conventions for documenting optical breadboard assemblies<a class="headerlink" href="#conventions-for-documenting-optical-breadboard-assemblies" title="Permalink to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<p>The goal of this part is to propose conventions and guidelines for documenting
+optics and photonics systems built on an optical breadboard (metal support with
+a grid of mounting holes), in a manner useful for sharing the design as open
+source hardware.</p>
+<p>The goal of <a class="reference external" href="https://www.oshwa.org/definition/">open source hardware</a> is to
+share designs so that they can not only be studied and replicated, but also
+modified and redistributed. In basic research settings (by which this document
+is motivated), we can hope that this enables newly developed techniques, as
+well as implementations of existing ones, can be shared between labs.
+Furthermore, given a full description of the design, it should be possible for
+specific improvements or extensions to be added and re-shared, without the need
+to duplicate the work of documenting the whole system from scratch.</p>
+<p>For a design to be open source hardware, it is important that the “source” or
+design files—the preferred format for making modifications—are shared. In
+fields such as electronics and mechanical devices, the “source” is usually the
+design files in the form of CAD (computer-aided design) files. In the case of
+electronics, both the schematic (circuit diagram) and the PCB (printed circuit
+board) layout are important, because both the logical design and the physical
+realization are needed to facilitate replication, troubleshooting,
+modification, and extension.</p>
+<p>Here we are interested in applying these principles to <em>prototype</em> optical and
+photonic systems, especially related to microscopy. By “prototype”, we
+generally mean systems built on optical breadboards, with or without a
+microscope body. This is in contrast to many successful open source hardware
+microscope projects <span id="id1">[<a class="reference internal" href="#id5" title="Michael Eisenstein. Microscopy made to order. Nature Methods, 18(11):1277–1281, November 2021. URL: https://doi.org/10.1038/s41592-021-01313-1, doi:10.1038/s41592-021-01313-1.">Eis21</a>]</span> which aim either to provide a
+modular platform (TODO Cite) or to provide a tightly refined and/or low-cost
+design for a particular technique (TODO Cite).</p>
+<p>TODO: Such projects could be used in combination with our approach here for the
+breadboard portion, as the microscope body</p>
+<p>We believed that there is a niche for a complementary approach where
+off-the-shelf parts<a class="footnote-reference brackets" href="#ots-oshw" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> are preferred whereever possible, and the
+overall design is optimized for straightforward layout and ease of future
+changes—i.e., how a researcher in a lab most typically would set up a
+particular microscopy technique from scratch. This is usually the format in
+which new microscopy techniques are prototyped and developed, and we believe
+there is a need for an easier way to share such designs <em>as is</em> without the
+need for extra effort to turn it into a polished product or to plug into a
+particular mechanical interface.</p>
+<p>The challenge here is that there is no obvious equivalent to CAD files for
+these builds. We could imagine using mechanical CAD, but mechanical CAD cannot
+capture the optical relationship between components; yet it frequently
+overspecifies incidnetal mechanical details. Optical CAD programs, on the other
+hand, can model optical elements and systems, but (to this writer’s knowledge)
+are not geared toward high-level specification of entire breadboard builds.</p>
+<p>In the absence of a systematic method to describe optical breadboard builds,
+one approach that is sometimes taken is to provide detailed step-by-step
+instructions for assembly and alignment of the whole build. While this can be
+very useful when done well, it often suffers from brittlenness arising from the
+linear nature of such instructions that do not reflect the structure of the
+principles by which the the system operates: if anything in the system is
+changed, the whole sequence of instructions may need to be reviewed and updated
+where necessary.</p>
+<p>In the following, we propose to separate the description of components from the
+description of their optical interrelationships and alignment methods. We hope
+that this approach can facilitate the documentation of optical breadboard
+builds in a modular fashion, more amenable to reuse and modification. In a
+second part, a concrete example is (to be) given for a basic two-photon
+scanning microscope.</p>
+</section>
+<section id="on-modularity">
+<h2>On modularity<a class="headerlink" href="#on-modularity" title="Permalink to this heading">#</a></h2>
+<p>Modularity is sometimes confused with being composed of components that present
+specifically engineered interfaces that plug into a system, in the manner of
+Lego blocks or Tinkertoy sets. That is one useful way to achieve
+interchangeable subsystems, but comes at a cost: any new component must first
+be reengineered to work with the specific interface before it is integrated.
+This can be a hurdle when prototyping a technique.</p>
+<p>TODO: Term this “stackable” design? See if it well describes existing
+approaches.</p>
+<p>A different tradeoff can be made by consciously making use of what might be
+called <em>universal interfaces</em>: interfaces that are simple and so widely used
+that almost anything can connect to. Examples in software include simple text
+files that list one item per line (see also the so-called
+<a class="reference external" href="https://en.wikipedia.org/wiki/Unix_philosophy">Unix philosophy</a>). Examples in
+electronics include 5 V TTL signals, plain analog voltages, 50 Ω transmission
+lines, and the like. Slightly more specific interfaces (software: NumPy arrays;
+electronics: serial communication lines) can also be regarded effectively
+universal, depending on the context.</p>
+<p>What these universal interfaces have in common is that while they require a
+little more expertise on the part of the user than solutions intended for “end
+users”, they offer vastly more power and flexibility. They serve as a lingua
+franca for modules, allowing components to be combined even if they were not
+explicitly designed to work together.</p>
+<p>Optical systems have a universal interface: the light beam and its geometry.
+The exact properties of the beam (for example, polarization) that need to be
+specified depends on the context, but it is the light beam itself that serves
+as the interface between components—not any mechanical interconnect per
+se<a class="footnote-reference brackets" href="#obvious" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>.</p>
+<p>We believe that modular description is possible with free-space optics on an
+optical breadboard. While this requires more knowledge on the part of the
+reader than with components that snap or screw together, and more thought on
+the part of the writer, it greatly reduces the amount of nonessential
+engineering required and keeps the design maximally flexible for modifications
+and extensions.</p>
+<section id="why-we-need-modular-descriptions">
+<h3>Why we need modular descriptions<a class="headerlink" href="#why-we-need-modular-descriptions" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Easier to understand when the interrelationship between components is made
+explicit</p></li>
+<li><p>Changing a specific component or aspect of the system is less likely to
+require changes to the whole</p>
+<ul>
+<li><p>Especially helpful in collaboration, GitHub pull requests</p></li>
+</ul>
+</li>
+<li><p>Clarifies required skills and knowledge</p></li>
+</ul>
+</section>
+<section id="separation-of-concerns">
+<h3>Separation of concerns<a class="headerlink" href="#separation-of-concerns" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Avoid intermingling overall design and layout considerations with placement
+and alignment of individual components</p></li>
+</ul>
+</section>
+<section id="degrees-of-freedom">
+<h3>Degrees of freedom<a class="headerlink" href="#degrees-of-freedom" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Importance of thinking in terms of DoFs and making it explicit in build
+description</p>
+<ul>
+<li><p>When the correct adjustments are provided, layout can be made flexible
+(e.g. add or remove mirrors)</p></li>
+</ul>
+</li>
+<li><p>Collimated laser beam: position, orientation</p>
+<ul>
+<li><p>But also polarization, beam diameter, etc.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="practical-tradeoffs">
+<h3>Practical tradeoffs<a class="headerlink" href="#practical-tradeoffs" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Not all components need to have the best fine adjustment for aligning</p></li>
+</ul>
+</section>
+<section id="optomechanical-systems">
+<h3>Optomechanical systems<a class="headerlink" href="#optomechanical-systems" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Free-space, cage, lens tubes</p></li>
+</ul>
+</section>
+<section id="overall-layout-and-design">
+<h3>Overall layout and design<a class="headerlink" href="#overall-layout-and-design" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>…</p></li>
+<li><p>Breadboard coordinates (used in auxiliary, not primary, role)</p></li>
+</ul>
+</section>
+</section>
+<section id="alignment">
+<h2>Alignment<a class="headerlink" href="#alignment" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Explain common alignment procedures here so that they don’t have to be
+explained in the actual build docs</p></li>
+<li><p>The possible variations may be quite large; prioritize those needed in our
+concrete build(s)</p></li>
+</ul>
+<section id="aligning-a-laser-beam-to-the-table">
+<h3>Aligning a laser beam to the table<a class="headerlink" href="#aligning-a-laser-beam-to-the-table" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="aligning-a-laser-beam-to-an-optical-component">
+<h3>Aligning a laser beam to an optical component<a class="headerlink" href="#aligning-a-laser-beam-to-an-optical-component" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Two mirrors and (usually) a power meter</p></li>
+</ul>
+</section>
+<section id="aligning-optical-components-to-a-laser-beam">
+<h3>Aligning optical components to a laser beam<a class="headerlink" href="#aligning-optical-components-to-a-laser-beam" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="aligning-with-a-periscope">
+<h3>Aligning with a periscope<a class="headerlink" href="#aligning-with-a-periscope" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="aligning-with-a-microscope-body">
+<h3>Aligning with a microscope body<a class="headerlink" href="#aligning-with-a-microscope-body" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>What are the different possibilities here? Keep it specific to tube lens for
+now?</p></li>
+</ul>
+</section>
+</section>
+<section id="thoughts-on-hardware-beyond-optics-and-photonics">
+<h2>Thoughts on hardware beyond optics and photonics<a class="headerlink" href="#thoughts-on-hardware-beyond-optics-and-photonics" title="Permalink to this heading">#</a></h2>
+<div class="docutils container" id="id4">
+<div class="citation" id="id5" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">Eis21</a><span class="fn-bracket">]</span></span>
+<p>Michael Eisenstein. Microscopy made to order. <em>Nature Methods</em>, 18(11):1277–1281, November 2021. URL: <a class="reference external" href="https://doi.org/10.1038/s41592-021-01313-1">https://doi.org/10.1038/s41592-021-01313-1</a>, <a class="reference external" href="https://doi.org/10.1038/s41592-021-01313-1">doi:10.1038/s41592-021-01313-1</a>.</p>
+</div>
+</div>
+</div>
+<hr class="footnotes docutils" />
+<aside class="footnote brackets" id="ots-oshw" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
+<p>Not to say that these off-the-shelf parts cannot themselves be open source
+hardware (in fact, that would be ideal). The point is to emphasize the
+high-level build over reinventing components when standard ones are available.</p>
+</aside>
+<aside class="footnote brackets" id="obvious" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">2</a><span class="fn-bracket">]</span></span>
+<p>If it sounds like this paragraph is stating the obvious, that’s because it is.
+The point I’m trying to make is about a change of perspective: let’s not allow
+the geometric relationships in the light path to get buried under details about
+all the mechanical and optomechanical components.</p>
+</aside>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">OpenScan Hardware</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="tpm.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">OpenScan two-photon microscope</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#on-modularity">On modularity</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-we-need-modular-descriptions">Why we need modular descriptions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#separation-of-concerns">Separation of concerns</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#degrees-of-freedom">Degrees of freedom</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-tradeoffs">Practical tradeoffs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optomechanical-systems">Optomechanical systems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overall-layout-and-design">Overall layout and design</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alignment">Alignment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aligning-a-laser-beam-to-the-table">Aligning a laser beam to the table</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aligning-a-laser-beam-to-an-optical-component">Aligning a laser beam to an optical component</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aligning-optical-components-to-a-laser-beam">Aligning optical components to a laser beam</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aligning-with-a-periscope">Aligning with a periscope</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aligning-with-a-microscope-body">Aligning with a microscope body</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thoughts-on-hardware-beyond-optics-and-photonics">Thoughts on hardware beyond optics and photonics</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By OpenScan Contributors
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023; CC-BY-SA-4.0.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
