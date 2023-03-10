@@ -7,7 +7,7 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 # OpenScan Hardware
 
 This repository contains the source files for the OpenScan Hardware book, a
-work in progress. Further details will be added.
+**work in progress**. Further details will be added.
 
 ## Building
 
