@@ -14,22 +14,23 @@ a grid of mounting holes), in a manner useful for sharing the design as open
 source hardware.
 
 The goal of [open source hardware](https://www.oshwa.org/definition/) is to
-share designs so that they can not only be studied and replicated, but also
-modified and redistributed. In basic research settings (by which this document
-is motivated), we can hope that this enables newly developed techniques, as
-well as implementations of existing ones, can be shared between labs.
-Furthermore, given a full description of the design, it should be possible for
-specific improvements or extensions to be added and re-shared, without the need
-to duplicate the work of documenting the whole system from scratch.
+share designs so that not only can they be studied and replicated, but also
+modified and those modified designs redistributed. In basic research settings
+(by which this document is motivated), we can hope that this will enable newly
+developed techniques, as well as implementations of existing ones, to be shared
+between labs. Furthermore, given a full description of the design, it should be
+possible for specific improvements or extensions to be added and re-shared,
+without the need to duplicate the work of documenting the whole system from
+scratch.
 
 For a design to be open source hardware, it is important that the "source" or
-design files—the preferred format for making modifications—are shared. In
-fields such as electronics and mechanical devices, the "source" is usually the
-design files in the form of CAD (computer-aided design) files. In the case of
-electronics, both the schematic (circuit diagram) and the PCB (printed circuit
-board) layout are important, because both the logical design and the physical
-realization are needed to facilitate replication, troubleshooting,
-modification, and extension.
+design files—the preferred format for making modifications—are shared
+{cite}`OSHWSoP`. In fields such as electronics and mechanical devices, the
+"source" is usually the design files in the form of CAD (computer-aided design)
+files. In the case of electronics, both the schematic (circuit diagram) and the
+PCB (printed circuit board) layout are important, because both the logical
+design and the physical realization are needed to facilitate replication,
+troubleshooting, modification, and extension.
 
 Here we are interested in applying these principles to _prototype_ optical and
 photonic systems, especially related to microscopy. By "prototype", we
@@ -74,6 +75,9 @@ that this approach can facilitate the documentation of optical breadboard
 builds in a modular fashion, more amenable to reuse and modification. In a
 second part, a concrete example is (to be) given for a basic two-photon
 scanning microscope.
+
+TODO: This is a living document; contributions are welcome (need contributor
+guide).
 
 ## On modularity
 
