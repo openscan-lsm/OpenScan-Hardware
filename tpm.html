@@ -379,18 +379,6 @@ title="Print to PDF"
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#shutter">
-     Shutter
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#shutter-alignment">
-       Shutter alignment
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#intensity-control-electro-optic-modulator-eom">
      Intensity control: electro-optic modulator (EOM)
     </a>
@@ -403,6 +391,18 @@ title="Print to PDF"
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#eom-design-notes">
        EOM design notes
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#shutter">
+     Shutter
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#shutter-alignment">
+       Shutter alignment
       </a>
      </li>
     </ul>
@@ -616,18 +616,6 @@ title="Print to PDF"
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#shutter">
-     Shutter
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#shutter-alignment">
-       Shutter alignment
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#intensity-control-electro-optic-modulator-eom">
      Intensity control: electro-optic modulator (EOM)
     </a>
@@ -640,6 +628,18 @@ title="Print to PDF"
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#eom-design-notes">
        EOM design notes
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#shutter">
+     Shutter
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#shutter-alignment">
+       Shutter alignment
       </a>
      </li>
     </ul>
@@ -898,47 +898,6 @@ from
 the device reversed 180°. See <a class="reference internal" href="align.html#align-eot-isolator"><span class="std std-ref">Aligning an EOTech Faraday isolator</span></a>.</p>
 </section>
 </section>
-<section id="shutter">
-<h3>Shutter<a class="headerlink" href="#shutter" title="Permalink to this headline">#</a></h3>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Component</p></th>
-<th class="head"><p>Manufacturer</p></th>
-<th class="head"><p>Part No</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Shutter</p></td>
-<td><p>Vincent (Uniblitz)</p></td>
-<td><p>TBD (VS14?)</p></td>
-</tr>
-<tr class="row-odd"><td><p>Shutter mount</p></td>
-<td><p></p></td>
-<td><p>TBD</p></td>
-</tr>
-<tr class="row-even"><td><p>Shutter driver</p></td>
-<td><p>Vincent (Uniblitz)</p></td>
-<td><p>TBD (VCM-D1?)</p></td>
-</tr>
-<tr class="row-odd"><td><p>Beam dump</p></td>
-<td><p>Thorlabs</p></td>
-<td><p>LB1</p></td>
-</tr>
-<tr class="row-even"><td><p>Beam dump mount</p></td>
-<td><p></p></td>
-<td><p>TBD</p></td>
-</tr>
-</tbody>
-</table>
-<section id="shutter-alignment">
-<h4>Shutter alignment<a class="headerlink" href="#shutter-alignment" title="Permalink to this headline">#</a></h4>
-<p><strong>Dependencies:</strong> Optical axis 1.</p>
-<p>Place such that beam passes through near the center of the aperture when the
-shutter is open. Fix at ~5° from perpendicular to the optical axis, such that
-the reflected beam (when the shutter is closed) is offset from the incoming
-beam. Block the reflected beam with the beam dump.</p>
-</section>
-</section>
 <section id="intensity-control-electro-optic-modulator-eom">
 <h3>Intensity control: electro-optic modulator (EOM)<a class="headerlink" href="#intensity-control-electro-optic-modulator-eom" title="Permalink to this headline">#</a></h3>
 <p>The EOM (consisting of a Pockels cell together with a polarizing beam splitter)
@@ -1000,6 +959,7 @@ be aligned first.</p>
 <ul class="simple">
 <li><p>For the EOM, Conoptics 350-80LA, which has a larger, 3.5 mm aperture, may be
 desirable. The 350-80 used here has a 2.7 mm aperture.</p></li>
+<li><p>The Conoptics EOMs can now be purchased with an integrated beam block.</p></li>
 <li><p>The EOM can be purchased with input polarizing beam splitter, in case the
 input beam does not have clean linear polarization. This is not necessary
 when the immediately previous component is the Faraday isolator (whose last
@@ -1015,7 +975,51 @@ have a wide bandwidth (wavelength distribution). However, power control could
 also be achieved at significantly lower cost using the combination of a
 motorized half-wave plate and a polarizing beam splitter, albeit with slower
 switching.</p></li>
+<li><p>The EOM should be located before the main shutter in the beam path, so that
+it does not experience temparature shifts when the shutter is opened or
+closed.</p></li>
 </ul>
+</section>
+</section>
+<section id="shutter">
+<h3>Shutter<a class="headerlink" href="#shutter" title="Permalink to this headline">#</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>Manufacturer</p></th>
+<th class="head"><p>Part No</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Shutter</p></td>
+<td><p>Vincent (Uniblitz)</p></td>
+<td><p>TBD (VS14?)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Shutter mount</p></td>
+<td><p></p></td>
+<td><p>TBD</p></td>
+</tr>
+<tr class="row-even"><td><p>Shutter driver</p></td>
+<td><p>Vincent (Uniblitz)</p></td>
+<td><p>TBD (VCM-D1?)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Beam dump</p></td>
+<td><p>Thorlabs</p></td>
+<td><p>LB1</p></td>
+</tr>
+<tr class="row-even"><td><p>Beam dump mount</p></td>
+<td><p></p></td>
+<td><p>TBD</p></td>
+</tr>
+</tbody>
+</table>
+<section id="shutter-alignment">
+<h4>Shutter alignment<a class="headerlink" href="#shutter-alignment" title="Permalink to this headline">#</a></h4>
+<p><strong>Dependencies:</strong> Optical axis 1.</p>
+<p>Place such that beam passes through near the center of the aperture when the
+shutter is open. Fix at ~5° from perpendicular to the optical axis, such that
+the reflected beam (when the shutter is closed) is offset from the incoming
+beam. Block the reflected beam with the beam dump.</p>
 </section>
 </section>
 <section id="polarization-control-wave-plates">
