@@ -6,4 +6,5 @@ format: jb-book
 root: intro
 chapters:
   - file: obba
+  - file: align
   - file: tpm

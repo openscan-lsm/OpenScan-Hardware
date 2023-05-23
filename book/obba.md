@@ -91,6 +91,11 @@ This can be a hurdle when prototyping a technique.
 TODO: Term this "stackable" design? See if it well describes existing
 approaches.
 
+TODO: The other extreme is that "anything built from component parts is
+modular" in a sense. What makes modularity useful is the ability to work on, or
+replace, components without affecting the rest of the system (at all, or more
+than is unavoidable).
+
 A different tradeoff can be made by consciously making use of what might be
 called _universal interfaces_: interfaces that are simple and so widely used
 that almost anything can connect to. Examples in software include simple text
@@ -156,29 +161,39 @@ and extensions.
 - ...
 - Breadboard coordinates (used in auxiliary, not primary, role)
 
-## Alignment
+## Optical alignment
 
-- Explain common alignment procedures here so that they don't have to be
-  explained in the actual build docs
-- The possible variations may be quite large; prioritize those needed in our
-  concrete build(s)
+### Documenting alignment procedures
 
-### Aligning a laser beam to the table
+We want to provide concrete [instructions](./align.md) for how to align optical
+components, but we do not want to end up with a long set of instructions to be
+blindly followed without an understanding the logic behind the procedure.
 
-### Aligning a laser beam to an optical component
+For this reason we want to make the following items clear for every alignment
+procedure we describe:
 
-- Two mirrors and (usually) a power meter
-
-### Aligning optical components to a laser beam
-
-### Aligning with a periscope
-
-### Aligning with a microscope body
-
-- What are the different possibilities here? Keep it specific to tube lens for
-  now?
+- Alignment requires having a well-defined readout that is repeatable.
+  - The readout can be a lot of different things, such as an optical power
+    meter readout, or visual inspection of a laser beam being centered on an
+    iris.
+- The goal/target of the alignment procedure must be clearly defined in terms
+  of the readout.
+- It must be clear which degrees of freedom are being adjusted.
+  - Not all of the DoFs may have/require independent adjustments and/or fine
+    adjustments. But these relationships should be noted.
+- The goal/target of the alignment must constrain all of the degrees of freedom
+  being adjusted.
+  - If this is not the case, the alignment could be "finished" and yet end up
+    in many different states.
+- Fine adjustments should be initialized to a neutral or centered position
+  before coarse alignment or positioning. The method for this initialization
+  should be noted.
 
 ## Thoughts on hardware beyond optics and photonics
+
+(To be written.)
+
+______________________________________________________________________
 
 ```{bibliography}
 ```
