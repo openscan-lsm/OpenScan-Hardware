@@ -307,8 +307,8 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#aligning-a-faraday-isolator">
-     Aligning a Faraday isolator
+    <a class="reference internal nav-link" href="#aligning-an-optical-faraday-isolator">
+     Aligning an optical (Faraday) isolator
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -381,8 +381,8 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#aligning-a-faraday-isolator">
-     Aligning a Faraday isolator
+    <a class="reference internal nav-link" href="#aligning-an-optical-faraday-isolator">
+     Aligning an optical (Faraday) isolator
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -449,9 +449,53 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 <h1>Alignment procedures for optical breadboard assemblies<a class="headerlink" href="#alignment-procedures-for-optical-breadboard-assemblies" title="Permalink to this headline">#</a></h1>
 <section id="aligning-optical-components-to-a-pre-existing-laser-beam-path">
 <h2>Aligning optical components to a pre-existing laser beam path<a class="headerlink" href="#aligning-optical-components-to-a-pre-existing-laser-beam-path" title="Permalink to this headline">#</a></h2>
-<section id="aligning-a-faraday-isolator">
-<h3>Aligning a Faraday isolator<a class="headerlink" href="#aligning-a-faraday-isolator" title="Permalink to this headline">#</a></h3>
-<p>TODO.</p>
+<section id="aligning-an-optical-faraday-isolator">
+<h3>Aligning an optical (Faraday) isolator<a class="headerlink" href="#aligning-an-optical-faraday-isolator" title="Permalink to this headline">#</a></h3>
+<p><strong>Readout:</strong> Laser power transmitted by the device in forward and reverse
+direction.</p>
+<p><strong>Alignment goal:</strong> Maximum transmission in forward direction (input polarizer,
+wavelength tuning); 45° rotation (if adjustable); minimum transmission in
+reverse direction (output polarizer).</p>
+<p><strong>Degrees of freedom:</strong> X, Y, yaw, roll (pitch can usually be fixed, assuming
+beam parallel to table); angle between polarizers; rotation angle (some models)</p>
+<p>Optical isolators (of the polarization-dependent type discussed here) consist
+of a Faraday rotator flanked by two polarizers (often polarizing beam
+splitters). One or both of the polarizers may be rotated (roll) relative to the
+Faraday rotator; the roll angle of the Faraday rotator itself does not affect
+alignment.</p>
+<p>Some optical isolators (the “adjustable” or “tunable” type) have an additional
+adjustment for the angle of rotation by the Faraday rotator; this can be used
+to tune the isolator for specific wavelengths (because the angle of rotation is
+wavelength-dependent).</p>
+<p>The following procedure assumes that fine adjustment of the X, Y, pitch, and
+yaw is not necessary, due to the device’s aperture being large enough compared
+to the laser beam. If the beam diameter is closer to the aperture size, it may
+be necessary to have fine and independent adjustments for these DoFs (for
+example, use a pair of kinematic mirrors before the isolator to stear the
+beam).</p>
+<ul class="simple">
+<li><p>Set up a power meter on the output side of where the isolator will be placed.</p></li>
+<li><p>Place the isolator in the beam path, in the forward orientation, such that
+the beam is not clipped (<strong>X, Y, (pitch,) yaw</strong>).</p></li>
+<li><p>With the output polarizer removed, adjust the <strong>roll of the input polarizer</strong>
+(this may be the roll of the whole device if the input polarizer is not
+independently adjustable; in this case there is no need to remove the output
+polarizer) for maximum power transmission.</p></li>
+<li><p>Set the <strong>roll of the output polarizer</strong> to be at 45° to the input polarizer.
+(Of the two possible 45° positions, choose the one resulting in higher
+transmission; however, set it to 45°, not the point of highest transmission.)</p></li>
+<li><p>If the isolator has a <strong>tuning adjustment</strong>, adjust it for maximum
+transmission. (This should set the Faraday rotator’s angle of rotation to be
+45°, which is required for isolation behavior.)</p></li>
+<li><p>Flip the isolator to the reverse orientation (but ensure that the laser
+passes through the device).</p></li>
+<li><p><strong>Fine-adjust the roll of the output polarizer</strong> for minimum power
+transmission (that is, maximum extinction).</p></li>
+<li><p>Return the isolator to the forward orientation (and ensure that the beam is
+centered through the device).</p></li>
+<li><p>Set up beam dumps to block the rejected light exiting from the two polarizing
+beam splitters.</p></li>
+</ul>
 <section id="aligning-an-eotech-faraday-isolator">
 <span id="align-eot-isolator"></span><h4>Aligning an EOTech Faraday isolator<a class="headerlink" href="#aligning-an-eotech-faraday-isolator" title="Permalink to this headline">#</a></h4>
 <p>TODO.</p>
@@ -461,7 +505,7 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 <h3>Aligning an electro-optic modulator (EOM)<a class="headerlink" href="#aligning-an-electro-optic-modulator-eom" title="Permalink to this headline">#</a></h3>
 <p><strong>Readout:</strong> Laser power transmitted by the device.</p>
 <p><strong>Alignment goal:</strong> Maximum extinction ratio of laser power through the device.</p>
-<p><strong>Degrees of freedom:</strong> X, Y, pitch, yaw, roll</p>
+<p><strong>Degrees of freedom:</strong> X, Y, pitch, yaw, roll; bias voltage</p>
 <p>Note: Alignment procedure will likely differ depending on the manufacturer of
 the device. For now we describe alignment for Conoptics EOMs. Further research
 is needed to derive aspects of alignment (if any) that are common to other

@@ -8,9 +8,57 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 
 ## Aligning optical components to a pre-existing laser beam path
 
-### Aligning a Faraday isolator
+### Aligning an optical (Faraday) isolator
 
-TODO.
+**Readout:** Laser power transmitted by the device in forward and reverse
+direction.
+
+**Alignment goal:** Maximum transmission in forward direction (input polarizer,
+wavelength tuning); 45° rotation (if adjustable); minimum transmission in
+reverse direction (output polarizer).
+
+**Degrees of freedom:** X, Y, yaw, roll (pitch can usually be fixed, assuming
+beam parallel to table); angle between polarizers; rotation angle (some models)
+
+Optical isolators (of the polarization-dependent type discussed here) consist
+of a Faraday rotator flanked by two polarizers (often polarizing beam
+splitters). One or both of the polarizers may be rotated (roll) relative to the
+Faraday rotator; the roll angle of the Faraday rotator itself does not affect
+alignment.
+
+Some optical isolators (the "adjustable" or "tunable" type) have an additional
+adjustment for the angle of rotation by the Faraday rotator; this can be used
+to tune the isolator for specific wavelengths (because the angle of rotation is
+wavelength-dependent).
+
+The following procedure assumes that fine adjustment of the X, Y, pitch, and
+yaw is not necessary, due to the device's aperture being large enough compared
+to the laser beam. If the beam diameter is closer to the aperture size, it may
+be necessary to have fine and independent adjustments for these DoFs (for
+example, use a pair of kinematic mirrors before the isolator to stear the
+beam).
+
+- Set up a power meter on the output side of where the isolator will be placed.
+- Place the isolator in the beam path, in the forward orientation, such that
+  the beam is not clipped (**X, Y, (pitch,) yaw**).
+- With the output polarizer removed, adjust the **roll of the input polarizer**
+  (this may be the roll of the whole device if the input polarizer is not
+  independently adjustable; in this case there is no need to remove the output
+  polarizer) for maximum power transmission.
+- Set the **roll of the output polarizer** to be at 45° to the input polarizer.
+  (Of the two possible 45° positions, choose the one resulting in higher
+  transmission; however, set it to 45°, not the point of highest transmission.)
+- If the isolator has a **tuning adjustment**, adjust it for maximum
+  transmission. (This should set the Faraday rotator's angle of rotation to be
+  45°, which is required for isolation behavior.)
+- Flip the isolator to the reverse orientation (but ensure that the laser
+  passes through the device).
+- **Fine-adjust the roll of the output polarizer** for minimum power
+  transmission (that is, maximum extinction).
+- Return the isolator to the forward orientation (and ensure that the beam is
+  centered through the device).
+- Set up beam dumps to block the rejected light exiting from the two polarizing
+  beam splitters.
 
 (align-eot-isolator)=
 
@@ -24,7 +72,7 @@ TODO.
 
 **Alignment goal:** Maximum extinction ratio of laser power through the device.
 
-**Degrees of freedom:** X, Y, pitch, yaw, roll
+**Degrees of freedom:** X, Y, pitch, yaw, roll; bias voltage
 
 Note: Alignment procedure will likely differ depending on the manufacturer of
 the device. For now we describe alignment for Conoptics EOMs. Further research
