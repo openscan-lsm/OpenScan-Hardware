@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="OpenScan two-photon microscope" href="tpm.html" />
+    <link rel="next" title="Alignment procedures for optical breadboard assemblies" href="align.html" />
     <link rel="prev" title="OpenScan Hardware" href="intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -112,6 +112,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Conventions for documenting optical breadboard assemblies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="align.html">
+   Alignment procedures for optical breadboard assemblies
   </a>
  </li>
  <li class="toctree-l1">
@@ -339,33 +344,13 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#alignment">
-   Alignment
+  <a class="reference internal nav-link" href="#optical-alignment">
+   Optical alignment
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#aligning-a-laser-beam-to-the-table">
-     Aligning a laser beam to the table
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#aligning-a-laser-beam-to-an-optical-component">
-     Aligning a laser beam to an optical component
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#aligning-optical-components-to-a-laser-beam">
-     Aligning optical components to a laser beam
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#aligning-with-a-periscope">
-     Aligning with a periscope
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#aligning-with-a-microscope-body">
-     Aligning with a microscope body
+    <a class="reference internal nav-link" href="#documenting-alignment-procedures">
+     Documenting alignment procedures
     </a>
    </li>
   </ul>
@@ -437,33 +422,13 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#alignment">
-   Alignment
+  <a class="reference internal nav-link" href="#optical-alignment">
+   Optical alignment
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#aligning-a-laser-beam-to-the-table">
-     Aligning a laser beam to the table
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#aligning-a-laser-beam-to-an-optical-component">
-     Aligning a laser beam to an optical component
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#aligning-optical-components-to-a-laser-beam">
-     Aligning optical components to a laser beam
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#aligning-with-a-periscope">
-     Aligning with a periscope
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#aligning-with-a-microscope-body">
-     Aligning with a microscope body
+    <a class="reference internal nav-link" href="#documenting-alignment-procedures">
+     Documenting alignment procedures
     </a>
    </li>
   </ul>
@@ -564,6 +529,10 @@ be reengineered to work with the specific interface before it is integrated.
 This can be a hurdle when prototyping a technique.</p>
 <p>TODO: Term this “stackable” design? See if it well describes existing
 approaches.</p>
+<p>TODO: The other extreme is that “anything built from component parts is
+modular” in a sense. What makes modularity useful is the ability to work on, or
+replace, components without affecting the rest of the system (at all, or more
+than is unavoidable).</p>
 <p>A different tradeoff can be made by consciously making use of what might be
 called <em>universal interfaces</em>: interfaces that are simple and so widely used
 that almost anything can connect to. Examples in software include simple text
@@ -647,39 +616,48 @@ description</p>
 </ul>
 </section>
 </section>
-<section id="alignment">
-<h2>Alignment<a class="headerlink" href="#alignment" title="Permalink to this headline">#</a></h2>
+<section id="optical-alignment">
+<h2>Optical alignment<a class="headerlink" href="#optical-alignment" title="Permalink to this headline">#</a></h2>
+<section id="documenting-alignment-procedures">
+<h3>Documenting alignment procedures<a class="headerlink" href="#documenting-alignment-procedures" title="Permalink to this headline">#</a></h3>
+<p>We want to provide concrete <a class="reference internal" href="align.html"><span class="doc std std-doc">instructions</span></a> for how to align optical
+components, but we do not want to end up with a long set of instructions to be
+blindly followed without an understanding the logic behind the procedure.</p>
+<p>For this reason we want to make the following items clear for every alignment
+procedure we describe:</p>
 <ul class="simple">
-<li><p>Explain common alignment procedures here so that they don’t have to be
-explained in the actual build docs</p></li>
-<li><p>The possible variations may be quite large; prioritize those needed in our
-concrete build(s)</p></li>
+<li><p>Alignment requires having a well-defined readout that is repeatable.</p>
+<ul>
+<li><p>The readout can be a lot of different things, such as an optical power
+meter readout, or visual inspection of a laser beam being centered on an
+iris.</p></li>
 </ul>
-<section id="aligning-a-laser-beam-to-the-table">
-<h3>Aligning a laser beam to the table<a class="headerlink" href="#aligning-a-laser-beam-to-the-table" title="Permalink to this headline">#</a></h3>
-</section>
-<section id="aligning-a-laser-beam-to-an-optical-component">
-<h3>Aligning a laser beam to an optical component<a class="headerlink" href="#aligning-a-laser-beam-to-an-optical-component" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>Two mirrors and (usually) a power meter</p></li>
+</li>
+<li><p>The goal/target of the alignment procedure must be clearly defined in terms
+of the readout.</p></li>
+<li><p>It must be clear which degrees of freedom are being adjusted.</p>
+<ul>
+<li><p>Not all of the DoFs may have/require independent adjustments and/or fine
+adjustments. But these relationships should be noted.</p></li>
 </ul>
-</section>
-<section id="aligning-optical-components-to-a-laser-beam">
-<h3>Aligning optical components to a laser beam<a class="headerlink" href="#aligning-optical-components-to-a-laser-beam" title="Permalink to this headline">#</a></h3>
-</section>
-<section id="aligning-with-a-periscope">
-<h3>Aligning with a periscope<a class="headerlink" href="#aligning-with-a-periscope" title="Permalink to this headline">#</a></h3>
-</section>
-<section id="aligning-with-a-microscope-body">
-<h3>Aligning with a microscope body<a class="headerlink" href="#aligning-with-a-microscope-body" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>What are the different possibilities here? Keep it specific to tube lens for
-now?</p></li>
+</li>
+<li><p>The goal/target of the alignment must constrain all of the degrees of freedom
+being adjusted.</p>
+<ul>
+<li><p>If this is not the case, the alignment could be “finished” and yet end up
+in many different states.</p></li>
+</ul>
+</li>
+<li><p>Fine adjustments should be initialized to a neutral or centered position
+before coarse alignment or positioning. The method for this initialization
+should be noted.</p></li>
 </ul>
 </section>
 </section>
 <section id="thoughts-on-hardware-beyond-optics-and-photonics">
 <h2>Thoughts on hardware beyond optics and photonics<a class="headerlink" href="#thoughts-on-hardware-beyond-optics-and-photonics" title="Permalink to this headline">#</a></h2>
+<p>(To be written.)</p>
+<hr class="docutils" />
 <div class="docutils container" id="id5">
 <dl class="citation">
 <dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id1">OSH</a></span></dt>
@@ -741,10 +719,10 @@ all the mechanical and optomechanical components.</p>
             <p class="prev-next-title">OpenScan Hardware</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="tpm.html" title="next page">
+    <a class='right-next' id="next-link" href="align.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">OpenScan two-photon microscope</p>
+        <p class="prev-next-title">Alignment procedures for optical breadboard assemblies</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

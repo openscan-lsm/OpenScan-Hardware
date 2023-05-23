@@ -15,7 +15,15 @@ other designs (confocal, ...) will be added by us and others—the intent is to
 provide something where people can contribute and also reuse as a baseline for
 documenting microscope builds they develop.
 
-**Current Status:** It is very early days. Most sections are missing.
+**Current Status:** This is a work in progress. Many sections are incomplete.
+
+```{danger}
+You must follow good laser safety practices when working with lasers. You must
+be fully trained according to your institutional policy and follow all
+applicable safety guidelines and legislation. Among other dangers, the lasers
+used here can do instant and permanent damage to your eyesight if not handled
+correctly.
+```
 
 ```{tableofcontents}
 ```

@@ -1,0 +1,652 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Alignment procedures for optical breadboard assemblies &#8212; OpenScan Hardware</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="OpenScan two-photon microscope" href="tpm.html" />
+    <link rel="prev" title="Conventions for documenting optical breadboard assemblies" href="obba.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">OpenScan Hardware</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    OpenScan Hardware
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="obba.html">
+   Conventions for documenting optical breadboard assemblies
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Alignment procedures for optical breadboard assemblies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tpm.html">
+   OpenScan two-photon microscope
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/openscan-lsm/OpenScan-Hardware"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/openscan-lsm/OpenScan-Hardware/issues/new?title=Issue%20on%20page%20%2Falign.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/align.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aligning-optical-components-to-a-pre-existing-laser-beam-path">
+   Aligning optical components to a pre-existing laser beam path
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aligning-a-faraday-isolator">
+     Aligning a Faraday isolator
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#aligning-an-eotech-faraday-isolator">
+       Aligning an EOTech Faraday isolator
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aligning-an-electro-optic-modulator-eom">
+     Aligning an electro-optic modulator (EOM)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#aligning-a-conoptics-eom">
+       Aligning a Conoptics EOM
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aligning-a-laser-beam-path-to-optical-components">
+   Aligning a laser beam path to optical components
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aligning-a-laser-beam-to-a-beam-expander">
+     Aligning a laser beam to a beam expander
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apendix-instructions-for-specific-optomechanical-mounts">
+   Apendix: Instructions for specific optomechanical mounts
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conoptics-model-102-eom-mount">
+     Conoptics Model 102 EOM mount
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Alignment procedures for optical breadboard assemblies</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aligning-optical-components-to-a-pre-existing-laser-beam-path">
+   Aligning optical components to a pre-existing laser beam path
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aligning-a-faraday-isolator">
+     Aligning a Faraday isolator
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#aligning-an-eotech-faraday-isolator">
+       Aligning an EOTech Faraday isolator
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aligning-an-electro-optic-modulator-eom">
+     Aligning an electro-optic modulator (EOM)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#aligning-a-conoptics-eom">
+       Aligning a Conoptics EOM
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aligning-a-laser-beam-path-to-optical-components">
+   Aligning a laser beam path to optical components
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aligning-a-laser-beam-to-a-beam-expander">
+     Aligning a laser beam to a beam expander
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apendix-instructions-for-specific-optomechanical-mounts">
+   Apendix: Instructions for specific optomechanical mounts
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conoptics-model-102-eom-mount">
+     Conoptics Model 102 EOM mount
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <!--
+This file is part of OpenScan-Hardware
+Copyright 2023 OpenScan Contributors
+SPDX-License-Identifier: CC-BY-SA-4.0
+-->
+<section class="tex2jax_ignore mathjax_ignore" id="alignment-procedures-for-optical-breadboard-assemblies">
+<h1>Alignment procedures for optical breadboard assemblies<a class="headerlink" href="#alignment-procedures-for-optical-breadboard-assemblies" title="Permalink to this headline">#</a></h1>
+<section id="aligning-optical-components-to-a-pre-existing-laser-beam-path">
+<h2>Aligning optical components to a pre-existing laser beam path<a class="headerlink" href="#aligning-optical-components-to-a-pre-existing-laser-beam-path" title="Permalink to this headline">#</a></h2>
+<section id="aligning-a-faraday-isolator">
+<h3>Aligning a Faraday isolator<a class="headerlink" href="#aligning-a-faraday-isolator" title="Permalink to this headline">#</a></h3>
+<p>TODO.</p>
+<section id="aligning-an-eotech-faraday-isolator">
+<span id="align-eot-isolator"></span><h4>Aligning an EOTech Faraday isolator<a class="headerlink" href="#aligning-an-eotech-faraday-isolator" title="Permalink to this headline">#</a></h4>
+<p>TODO.</p>
+</section>
+</section>
+<section id="aligning-an-electro-optic-modulator-eom">
+<h3>Aligning an electro-optic modulator (EOM)<a class="headerlink" href="#aligning-an-electro-optic-modulator-eom" title="Permalink to this headline">#</a></h3>
+<p><strong>Readout:</strong> Laser power transmitted by the device.</p>
+<p><strong>Alignment goal:</strong> Maximum extinction ratio of laser power through the device.</p>
+<p><strong>Degrees of freedom:</strong> X, Y, pitch, yaw, roll</p>
+<p>Note: Alignment procedure will likely differ depending on the manufacturer of
+the device. For now we describe alignment for Conoptics EOMs. Further research
+is needed to derive aspects of alignment (if any) that are common to other
+EOMs.</p>
+<section id="aligning-a-conoptics-eom">
+<span id="align-eom-conoptics"></span><h4>Aligning a Conoptics EOM<a class="headerlink" href="#aligning-a-conoptics-eom" title="Permalink to this headline">#</a></h4>
+<p>Here we describe how to align a Conoptics 350-80 EOM to a pre-existing optical
+axis defined by a laser beam. We assume an EOM configured for amplitude
+modulation and with minimal transmission near zero bias voltage.</p>
+<p>Make sure to read the manufacturer manual first, as incorrect handling can
+damage the EOM. The (linear) polarization angle of incoming laser beam must be
+known, at least approximately.</p>
+<ul class="simple">
+<li><p>Set up a power meter on the output side of where the device will be placed.</p>
+<ul>
+<li><p>With the device out of the beam path, align the power meter to the beam;
+note down the measurement.</p></li>
+</ul>
+</li>
+<li><p>Place the alignment tool (Conoptics Model 103) on the EOM mount.</p></li>
+<li><p><strong>Initialize</strong> the mount’s alignment screws (see
+<a class="reference internal" href="#conoptics-102-mount"><span class="std std-ref">mount instructions</span></a>).</p></li>
+<li><p><strong>Coarse-adjust and place</strong> the mount such that the beam passes through the
+alignment tool; clamp down to table (see
+<a class="reference internal" href="#conoptics-102-mount"><span class="std std-ref">mount instructions</span></a>).</p>
+<ul>
+<li><p>For this step, it may be easier to place an alignment screen in front of
+the power meter and observe the beam profile.</p></li>
+<li><p>Goal of coarse alignment: beam should be minimally clipped by the alignment
+tool.</p></li>
+</ul>
+</li>
+<li><p>Using the power meter, <strong>fine-adjust the X, Y, pitch, and yaw</strong> for maximum
+power transmission (see <a class="reference internal" href="#conoptics-102-mount"><span class="std std-ref">mount instructions</span></a>).</p></li>
+<li><p>With the laser off, swap the alignment tool for the actual EOM, noting
+correct direction (hole for rejected beam on the output end).</p></li>
+<li><p><strong>Roughly set the roll angle</strong> of the device such that the crystal axes are
+at 45 degrees to the incoming laser’s polarization angle.</p>
+<ul>
+<li><p>The square crystal should be visible through the input aperture; the
+incoming laser polarization should match the diagonal of the crystal</p></li>
+</ul>
+</li>
+<li><p>Set up a <strong>beam dump</strong> at about 30 mm away from the EOM rejected beam port.
+The rejected beam will be tilted by 22.5° toward the input end.</p></li>
+<li><p>With the driver turned off, connect the cables.</p></li>
+<li><p>Turn on the driver and set the bias voltage to zero.</p></li>
+<li><p><strong>Fine-adjust the roll</strong> by iteratively optimizing for minimum transmission,
+alternating between adjusting the bias voltage (near zero) and adjusting the
+roll angle.</p></li>
+<li><p><strong>Fine-adjust the X, Y, pitch, and yaw</strong> to maximize the extinction ratio,
+which is the ratio of the maximum and minimum transmission.</p>
+<ul>
+<li><p>Do this by adjusting in small increments to reduce the minimum
+transmission, and checking that you have not reduced the maximum
+transmission.</p></li>
+</ul>
+</li>
+<li><p>Iterate over the last two steps (fine adjustment of roll; X, Y, pitch, and
+yaw) until no further improvement can be made to the extinction ratio.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="aligning-a-laser-beam-path-to-optical-components">
+<h2>Aligning a laser beam path to optical components<a class="headerlink" href="#aligning-a-laser-beam-path-to-optical-components" title="Permalink to this headline">#</a></h2>
+<p>TODO: General: pair of mirrors.</p>
+<section id="aligning-a-laser-beam-to-a-beam-expander">
+<h3>Aligning a laser beam to a beam expander<a class="headerlink" href="#aligning-a-laser-beam-to-a-beam-expander" title="Permalink to this headline">#</a></h3>
+<p>TODO.</p>
+</section>
+</section>
+<section id="apendix-instructions-for-specific-optomechanical-mounts">
+<h2>Apendix: Instructions for specific optomechanical mounts<a class="headerlink" href="#apendix-instructions-for-specific-optomechanical-mounts" title="Permalink to this headline">#</a></h2>
+<section id="conoptics-model-102-eom-mount">
+<span id="conoptics-102-mount"></span><h3>Conoptics Model 102 EOM mount<a class="headerlink" href="#conoptics-model-102-eom-mount" title="Permalink to this headline">#</a></h3>
+<p>TODO: Photograph.</p>
+<p>This mount offers non-independent adjustments for the X, Y, pitch, and yaw. The
+roll adjustment is independent but with no fine adjustment screw.</p>
+<ul class="simple">
+<li><p>Initialization</p>
+<ul>
+<li><p>Set the 4 thumb screws to abut the cylinder radially (i.e., each normal to
+the cylinder surface). (TODO: good vs bad diagram)</p></li>
+<li><p>Set the pitch angle close to zero: using a beam height ruler (or similar)
+to measure the height above the table of each end of the cylinder, ensure
+that the cylinder is parallel to the table to within ~0.2 mm.</p></li>
+</ul>
+</li>
+<li><p>Coarse adjustment and positioning</p>
+<ul>
+<li><p>The lab jack (bottom portion of the mount) Y adjustment is used for coarse
+positioning.</p></li>
+<li><p>X and yaw coarse positioning done by sliding on table.</p>
+<ul>
+<li><p>Clamp down once correctly positioned.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Fine adjustment of X, Y, pitch, and yaw with the 4 thumb screws:</p>
+<ul>
+<li><p>None of these screws are independent from the other 3, so iterative
+adjustment is necessary.</p></li>
+<li><p>The two thumb screws at the same end of the mount are 120° (not 90°) apart,
+so adjustment is relatively interdependent. In contrast, the two screws on
+one side of the mount mostly affect the input and output apertures of the
+device, and are less interdependent. (TODO verify).</p></li>
+<li><p>Therefore, it makes sense to alternate between adjusting the pairs of thumb
+screws at each end of the mount; for each pair, also alternate between the
+two screws to iteratively optimize.</p></li>
+</ul>
+</li>
+<li><p>The upper half-rings should be closed and the top screws tightened only after
+all alignment is complete. Use only reasonable force, and check that
+alignment is not affected while tightening.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="obba.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Conventions for documenting optical breadboard assemblies</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="tpm.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">OpenScan two-photon microscope</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By OpenScan Contributors<br/>
+  
+      &copy; Copyright 2023; CC-BY-SA-4.0.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Conventions for documenting optical breadboard assemblies" href="obba.html" />
+    <link rel="prev" title="Alignment procedures for optical breadboard assemblies" href="align.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -111,6 +111,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="obba.html">
    Conventions for documenting optical breadboard assemblies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="align.html">
+   Alignment procedures for optical breadboard assemblies
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -301,63 +306,209 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#design-and-overall-layout">
-   Design and overall layout
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#photonic-components">
-   Photonic components
+  <a class="reference internal nav-link" href="#overall-layout">
+   Overall layout
   </a>
   <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#optical-axes">
+     Optical axes
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#optical-axis-1-laser-control-and-modulation">
+       Optical axis 1: laser control and modulation
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#optical-axis-2-beam-expander">
+       Optical axis 2: beam expander
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#optical-axis-3-galvanometer-scanner-input">
+       Optical axis 3: galvanometer scanner input
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#optical-axis-4-microscope-epi-illumination-path">
+       Optical axis 4: microscope epi illumination path
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#overall-alignment-procedure">
+     Overall alignment procedure
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#photonic-optic-components">
+   Photonic/optic components
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#optical-table">
+     Optical table
+    </a>
+   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ultrafast-pulsed-laser">
      Ultrafast pulsed laser
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#laser-alignment">
+       Laser alignment
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#optical-isolator">
      Optical isolator
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#isolator-alignment">
+       Isolator alignment
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#shutter">
      Shutter
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#shutter-alignment">
+       Shutter alignment
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#intensity-control-electro-optic-modulator">
-     Intensity control: electro-optic modulator
+    <a class="reference internal nav-link" href="#intensity-control-electro-optic-modulator-eom">
+     Intensity control: electro-optic modulator (EOM)
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#eom-alignment">
+       EOM alignment
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#eom-design-notes">
+       EOM design notes
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#polarization-control-wave-plates">
+     Polarization control: wave plates
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#wave-plate-alignment">
+       Wave plate alignment
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mirrors-m1-m2">
+     Mirrors M1, M2
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#m1-m2-alignment">
+       M1-M2 alignment
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#beam-expander">
      Beam expander
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#beam-expander-alignment">
+       Beam expander alignment
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#polarization-control">
-     Polarization control
+    <a class="reference internal nav-link" href="#mirror-m3-periscope-m4-m5">
+     Mirror M3; periscope M4-M5
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#m3-m5-design-notes">
+       M3-M5 design notes
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#m3-m5-alignment">
+       M3-M5 alignment
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#galvanometer-scanner">
-     Galvanometer scanner
+    <a class="reference internal nav-link" href="#galvanometer-scanners">
+     Galvanometer scanners
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#galvo-alignment">
+       Galvo alignment
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#scan-lens-and-tube-lens">
-     Scan lens and tube lens
+    <a class="reference internal nav-link" href="#scan-lens">
+     Scan lens
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#scan-lens-design-notes">
+       Scan lens design notes
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#scan-lens-alignment">
+       Scan lens alignment
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#microscope-body">
      Microscope body
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#microscopy-body-alignment">
+       Microscopy body alignment
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#photomultiplier-tube">
-     Photomultiplier tube
+    <a class="reference internal nav-link" href="#emission-beam-splitter">
+     Emission beam splitter
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#photomultiplier-tubes">
+     Photomultiplier tubes
     </a>
    </li>
   </ul>
@@ -365,11 +516,6 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#electronics">
    Electronics
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#software">
-   Software
   </a>
  </li>
 </ul>
@@ -397,63 +543,209 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#design-and-overall-layout">
-   Design and overall layout
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#photonic-components">
-   Photonic components
+  <a class="reference internal nav-link" href="#overall-layout">
+   Overall layout
   </a>
   <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#optical-axes">
+     Optical axes
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#optical-axis-1-laser-control-and-modulation">
+       Optical axis 1: laser control and modulation
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#optical-axis-2-beam-expander">
+       Optical axis 2: beam expander
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#optical-axis-3-galvanometer-scanner-input">
+       Optical axis 3: galvanometer scanner input
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#optical-axis-4-microscope-epi-illumination-path">
+       Optical axis 4: microscope epi illumination path
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#overall-alignment-procedure">
+     Overall alignment procedure
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#photonic-optic-components">
+   Photonic/optic components
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#optical-table">
+     Optical table
+    </a>
+   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ultrafast-pulsed-laser">
      Ultrafast pulsed laser
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#laser-alignment">
+       Laser alignment
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#optical-isolator">
      Optical isolator
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#isolator-alignment">
+       Isolator alignment
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#shutter">
      Shutter
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#shutter-alignment">
+       Shutter alignment
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#intensity-control-electro-optic-modulator">
-     Intensity control: electro-optic modulator
+    <a class="reference internal nav-link" href="#intensity-control-electro-optic-modulator-eom">
+     Intensity control: electro-optic modulator (EOM)
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#eom-alignment">
+       EOM alignment
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#eom-design-notes">
+       EOM design notes
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#polarization-control-wave-plates">
+     Polarization control: wave plates
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#wave-plate-alignment">
+       Wave plate alignment
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mirrors-m1-m2">
+     Mirrors M1, M2
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#m1-m2-alignment">
+       M1-M2 alignment
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#beam-expander">
      Beam expander
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#beam-expander-alignment">
+       Beam expander alignment
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#polarization-control">
-     Polarization control
+    <a class="reference internal nav-link" href="#mirror-m3-periscope-m4-m5">
+     Mirror M3; periscope M4-M5
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#m3-m5-design-notes">
+       M3-M5 design notes
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#m3-m5-alignment">
+       M3-M5 alignment
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#galvanometer-scanner">
-     Galvanometer scanner
+    <a class="reference internal nav-link" href="#galvanometer-scanners">
+     Galvanometer scanners
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#galvo-alignment">
+       Galvo alignment
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#scan-lens-and-tube-lens">
-     Scan lens and tube lens
+    <a class="reference internal nav-link" href="#scan-lens">
+     Scan lens
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#scan-lens-design-notes">
+       Scan lens design notes
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#scan-lens-alignment">
+       Scan lens alignment
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#microscope-body">
      Microscope body
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#microscopy-body-alignment">
+       Microscopy body alignment
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#photomultiplier-tube">
-     Photomultiplier tube
+    <a class="reference internal nav-link" href="#emission-beam-splitter">
+     Emission beam splitter
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#photomultiplier-tubes">
+     Photomultiplier tubes
     </a>
    </li>
   </ul>
@@ -461,11 +753,6 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#electronics">
    Electronics
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#software">
-   Software
   </a>
  </li>
 </ul>
@@ -485,50 +772,451 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 -->
 <section class="tex2jax_ignore mathjax_ignore" id="openscan-two-photon-microscope">
 <h1>OpenScan two-photon microscope<a class="headerlink" href="#openscan-two-photon-microscope" title="Permalink to this headline">#</a></h1>
+<p>Here we describe a concrete build for a scanning two-photon excitation
+fluorescence microscope.</p>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<p>TODO: Choices made: use a commercial microscopy body (ergonomic for biologist
+users, and simplifies integration with other imaging modalities). The
+limitation is that you don’t have full control over the optics (tube lenses).</p>
 </section>
-<section id="design-and-overall-layout">
-<h2>Design and overall layout<a class="headerlink" href="#design-and-overall-layout" title="Permalink to this headline">#</a></h2>
+<section id="overall-layout">
+<h2>Overall layout<a class="headerlink" href="#overall-layout" title="Permalink to this headline">#</a></h2>
+<p>TODO Diagram (and photographs).</p>
+<section id="optical-axes">
+<h3>Optical axes<a class="headerlink" href="#optical-axes" title="Permalink to this headline">#</a></h3>
+<section id="optical-axis-1-laser-control-and-modulation">
+<h4>Optical axis 1: laser control and modulation<a class="headerlink" href="#optical-axis-1-laser-control-and-modulation" title="Permalink to this headline">#</a></h4>
+<p>Parallel to table at ~100 mm height. Established by Ti:Sapphire laser emission.</p>
 </section>
-<section id="photonic-components">
-<h2>Photonic components<a class="headerlink" href="#photonic-components" title="Permalink to this headline">#</a></h2>
+<section id="optical-axis-2-beam-expander">
+<h4>Optical axis 2: beam expander<a class="headerlink" href="#optical-axis-2-beam-expander" title="Permalink to this headline">#</a></h4>
+<p>Parallel to table at ~100 mm height. Determined by beam expander placement.
+Aligned using mirrors M1 and M2.</p>
+</section>
+<section id="optical-axis-3-galvanometer-scanner-input">
+<h4>Optical axis 3: galvanometer scanner input<a class="headerlink" href="#optical-axis-3-galvanometer-scanner-input" title="Permalink to this headline">#</a></h4>
+<p>Parallel to table. Determined by position of galvo scanners, which in turn
+depends on optical axis 4 and its components. Aligned using mirrors M3 and M5.</p>
+</section>
+<section id="optical-axis-4-microscope-epi-illumination-path">
+<h4>Optical axis 4: microscope epi illumination path<a class="headerlink" href="#optical-axis-4-microscope-epi-illumination-path" title="Permalink to this headline">#</a></h4>
+<p>Parallel to table. Established by microscope body placement.</p>
+</section>
+</section>
+<section id="overall-alignment-procedure">
+<h3>Overall alignment procedure<a class="headerlink" href="#overall-alignment-procedure" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Fix the components that establish optical axes and do not depend on
+alignment:</p>
+<ul>
+<li><p>Ti:Sapphire laser (optical axis 1)</p></li>
+<li><p>Beam expander (optical axis 2)</p></li>
+<li><p>Microscope body (optical axis 4)</p></li>
+</ul>
+</li>
+<li><p>Align components on optical axes 1 and 4.</p></li>
+<li><p>Co-align optical axes 1 and 2 using mirrors M1 and M2.</p></li>
+<li><p>Align galvanometer scanners to optical axis 4, establishing optical axis 3.</p></li>
+<li><p>Co-align optical axes 2 and 3 using mirrors M3 and M5.</p></li>
+</ul>
+</section>
+</section>
+<section id="photonic-optic-components">
+<h2>Photonic/optic components<a class="headerlink" href="#photonic-optic-components" title="Permalink to this headline">#</a></h2>
+<section id="optical-table">
+<h3>Optical table<a class="headerlink" href="#optical-table" title="Permalink to this headline">#</a></h3>
+<p>4x8-foot, 8-inch thick, with vibration isolation (e.g., TMC). 1-inch-spaced
+mounting holes tapped for 1/4-20.</p>
+<p>TODO: More details; 8-inch hole if using bottom port.</p>
+</section>
 <section id="ultrafast-pulsed-laser">
 <h3>Ultrafast pulsed laser<a class="headerlink" href="#ultrafast-pulsed-laser" title="Permalink to this headline">#</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>Manufacturer</p></th>
+<th class="head"><p>Part No</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Mode-locked Ti:Sapphire laser</p></td>
+<td><p>Spectra-Physics</p></td>
+<td><p>Mai Tai HP</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>BOM Notes:</strong> Mode-locked Ti:Sapphire lasers broadly come in two categories:
+turn-key systems with automatic control (Spectra-Physics Mai Tai or Coherent
+Chameleon), and manually tunable optical oscillators (Spectra-Physics Tsunami
+or Coherent Mira). The necessary pump laser is usually purchased as part of the
+package.</p>
+<section id="laser-alignment">
+<h4>Laser alignment<a class="headerlink" href="#laser-alignment" title="Permalink to this headline">#</a></h4>
+<p><strong>Dependencies:</strong> None.</p>
+<p><strong>Outgoing beam:</strong> Collimated laser beam with linear polarization at 0°
+(horizontal).</p>
+<p>We use the laser emission, as is, to define optical axis 1. It should be
+parallel to the table at a height of about 110 mm. It is convenient to have the
+laser be aligned to a row of mounting holes on the table, but this is not
+essential.</p>
+</section>
 </section>
 <section id="optical-isolator">
 <h3>Optical isolator<a class="headerlink" href="#optical-isolator" title="Permalink to this headline">#</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>Manufacturer</p></th>
+<th class="head"><p>Part No</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Faraday isolator</p></td>
+<td><p>Electro-Optics Technology</p></td>
+<td><p>TBD</p></td>
+</tr>
+<tr class="row-odd"><td><p>Isolator mount</p></td>
+<td><p></p></td>
+<td><p>TODO</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>BOM Notes:</strong> This part is obsolete. Possible substitutes include products
+from
+<a class="reference external" href="https://www.coherent.com/components-accessories/rotators-isolators">Coherent</a>
+(which acquired EOTech),
+<a class="reference external" href="https://www.conoptics.com/optical-isolators/">Conoptics</a>, or
+<a class="reference external" href="https://www.thorlabs.com/navigation.cfm?guide_id=2015">Thorlabs</a>.</p>
+<section id="isolator-alignment">
+<h4>Isolator alignment<a class="headerlink" href="#isolator-alignment" title="Permalink to this headline">#</a></h4>
+<p><strong>Dependencies:</strong> Optical axis 1.</p>
+<p><strong>Incoming beam:</strong> Collimated laser beam with linear polarization at 0°
+(horizontal).</p>
+<p><strong>Outgoing beam:</strong> Collimated laser beam with linear polarization at 45°.</p>
+<p>Align the device to the pre-existing optical axis 1. Maximize extinction with
+the device reversed 180°. See <a class="reference internal" href="align.html#align-eot-isolator"><span class="std std-ref">Aligning an EOTech Faraday isolator</span></a>.</p>
+</section>
 </section>
 <section id="shutter">
 <h3>Shutter<a class="headerlink" href="#shutter" title="Permalink to this headline">#</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>Manufacturer</p></th>
+<th class="head"><p>Part No</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Shutter</p></td>
+<td><p>Vincent (Uniblitz)</p></td>
+<td><p>TBD (VS14?)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Shutter mount</p></td>
+<td><p></p></td>
+<td><p>TBD</p></td>
+</tr>
+<tr class="row-even"><td><p>Shutter driver</p></td>
+<td><p>Vincent (Uniblitz)</p></td>
+<td><p>TBD (VCM-D1?)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Beam dump</p></td>
+<td><p>Thorlabs</p></td>
+<td><p>LB1</p></td>
+</tr>
+<tr class="row-even"><td><p>Beam dump mount</p></td>
+<td><p></p></td>
+<td><p>TBD</p></td>
+</tr>
+</tbody>
+</table>
+<section id="shutter-alignment">
+<h4>Shutter alignment<a class="headerlink" href="#shutter-alignment" title="Permalink to this headline">#</a></h4>
+<p><strong>Dependencies:</strong> Optical axis 1.</p>
+<p>Place such that beam passes through near the center of the aperture when the
+shutter is open. Fix at ~5° from perpendicular to the optical axis, such that
+the reflected beam (when the shutter is closed) is offset from the incoming
+beam. Block the reflected beam with the beam dump.</p>
 </section>
-<section id="intensity-control-electro-optic-modulator">
-<h3>Intensity control: electro-optic modulator<a class="headerlink" href="#intensity-control-electro-optic-modulator" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="intensity-control-electro-optic-modulator-eom">
+<h3>Intensity control: electro-optic modulator (EOM)<a class="headerlink" href="#intensity-control-electro-optic-modulator-eom" title="Permalink to this headline">#</a></h3>
+<p>The EOM (consisting of a Pockels cell together with a polarizing beam splitter)
+provides electronic control over excitation laser power.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>Manufacturer</p></th>
+<th class="head"><p>Part No</p></th>
+<th class="head"><p>Name</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>EOM</p></td>
+<td><p>Conoptics</p></td>
+<td><p>350-80</p></td>
+<td><p>KD*P Modulator</p></td>
+</tr>
+<tr class="row-odd"><td><p>EOM Mount</p></td>
+<td><p>Conoptics</p></td>
+<td><p>102</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Alignment tool</p></td>
+<td><p>Conoptics</p></td>
+<td><p>103</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>EOM driver</p></td>
+<td><p>Conoptics</p></td>
+<td><p>302RM</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Beam dump</p></td>
+<td><p>Thorlabs</p></td>
+<td><p>LB1</p></td>
+<td><p>Beam Block, 400 nm - 2 µm, 10 W Max Avg. Power, Pulsed and CW, Includes TR3 Post</p></td>
+</tr>
+<tr class="row-odd"><td><p>Beam dump mount</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>TODO</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>BOM Notes:</strong> The EOM should be configured for amplitude modulation, with
+minimum transmission near zero bias voltage.</p>
+<section id="eom-alignment">
+<h4>EOM alignment<a class="headerlink" href="#eom-alignment" title="Permalink to this headline">#</a></h4>
+<p><strong>Dependencies:</strong> Optical axis 1. Usually the upstream optical isolator should
+be aligned first.</p>
+<p><strong>Incoming beam:</strong> Collimated laser beam with linear polarization at 45°.</p>
+<p><strong>Outgoing beam:</strong> Collimated laser beam with linear polarization at 45°.</p>
+<p>Align the device to the pre-existing optical axis 1. See
+<a class="reference internal" href="align.html#align-eom-conoptics"><span class="std std-ref">Aligning a Conoptics EOM</span></a>.</p>
+</section>
+<section id="eom-design-notes">
+<h4>EOM design notes<a class="headerlink" href="#eom-design-notes" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li><p>For the EOM, Conoptics 350-80LA, which has a larger, 3.5 mm aperture, may be
+desirable. The 350-80 used here has a 2.7 mm aperture.</p></li>
+<li><p>The EOM can be purchased with input polarizing beam splitter, in case the
+input beam does not have clean linear polarization. This is not necessary
+when the immediately previous component is the Faraday isolator (whose last
+component is a polarizer).</p></li>
+<li><p>The EOM must have sufficient aperture size for the beam diameter. See
+manufacturer manual for details.</p></li>
+<li><p>EOM drivers are available optimized for different applications, e.g., fast
+switching vs high extinction ratio. For routine power control in TPM, we do
+not need fast switching. The 302RM is fast enough for laser blanking during
+retrace (not yet implemented in OpenScan).</p></li>
+<li><p>The choice of an EOM over an AOM is advantageous for Ti:Sapph lasers which
+have a wide bandwidth (wavelength distribution). However, power control could
+also be achieved at significantly lower cost using the combination of a
+motorized half-wave plate and a polarizing beam splitter, albeit with slower
+switching.</p></li>
+</ul>
+</section>
+</section>
+<section id="polarization-control-wave-plates">
+<h3>Polarization control: wave plates<a class="headerlink" href="#polarization-control-wave-plates" title="Permalink to this headline">#</a></h3>
+<p>A half-wave plate (HWP) followed by a quarter-wave plate (QWP) allows the
+excitation beam to be precisely adjusted to have circular polarization at the
+specimen.</p>
+<div class="admonition-how-does-this-work admonition">
+<p class="admonition-title">How does this work?</p>
+<p>The HWP allows the linear polarization of the incoming beam to be rotated to any
+chosen angle. The QWP, when aligned, converts the linearly polarized beam to a
+circularly polarized beam. It may therefore seem that the HWP is unnecessary.</p>
+<p>In practice, even if the QWP produces perfectly circularly polarized light,
+anisotropy in the optics between the QWP and the specimen will cause the beam to
+end up elliptically polarized. We can compensate for this effect by adjusting
+the QWP such that it emits a beam that is elliptically polarized in the
+orthogonal direction, so that it will end up circularly polarized at the
+specimen. However, in order to adjust the QWP in such a way, we need to be able
+to supply it with a linearly polarized beam at an angle of our choosing, which
+is why we need the HWP.</p>
+<p>The wave plates can also be adjusted to obtain linearly polarized light for
+applications such as fluorescence anisotropy measurements (the QWP is not
+necessary for this).</p>
+</div>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>Manufacturer</p></th>
+<th class="head"><p>Part No</p></th>
+<th class="head"><p>Name</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Half-wave plate</p></td>
+<td><p>Thorlabs</p></td>
+<td><p>AHWP05M-980</p></td>
+<td><p>Ø1/2” Mounted Achromatic Half-Wave Plate, Ø1” Mount, 690 - 1200 nm</p></td>
+</tr>
+<tr class="row-odd"><td><p>HWP mount</p></td>
+<td><p>Thorlabs</p></td>
+<td><p>CRM1P</p></td>
+<td><p>Precision Cage Rotation Mount with Micrometer Drive, Ø1” Optics, 8-32 Tap</p></td>
+</tr>
+<tr class="row-even"><td><p>Quarter-wave plate</p></td>
+<td><p>Thorlabs</p></td>
+<td><p>AQWP05M-980</p></td>
+<td><p>Ø1/2” Mounted Achromatic Quarter-Wave Plate, Ø1” Mount, 690 - 1200 nm</p></td>
+</tr>
+<tr class="row-odd"><td><p>QWP mount</p></td>
+<td><p>Thorlabs</p></td>
+<td><p>PRM1</p></td>
+<td><p>High-Precision Rotation Mount for Ø1” (25.4 mm) Optics</p></td>
+</tr>
+<tr class="row-even"><td><p>Posts and clamps</p></td>
+<td><p></p></td>
+<td><p>TBD</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>BOM Notes:</strong> Thorlabs CRM1P is obsolete and superseded by CRM1PT “Precision
+Cage Rotation Mount with Micrometer Drive, Ø1” Optics, 8-32 Tap”.</p>
+<section id="wave-plate-alignment">
+<h4>Wave plate alignment<a class="headerlink" href="#wave-plate-alignment" title="Permalink to this headline">#</a></h4>
+<p><strong>Dependencies:</strong> Optical axis 1. (Final polarization adjustment requires the
+full system to be built so that specimens can be imaged.)</p>
+<p>Place the two wave plates perpendicular to optical axis 1, centered around the
+beam.</p>
+<p>TODO: Polarization adjustment procedure using giant unilamellar vesicles.</p>
+</section>
+</section>
+<section id="mirrors-m1-m2">
+<h3>Mirrors M1, M2<a class="headerlink" href="#mirrors-m1-m2" title="Permalink to this headline">#</a></h3>
+<p>These mirrors affort beam steering to establish optical axis 2.</p>
+<section id="m1-m2-alignment">
+<h4>M1-M2 alignment<a class="headerlink" href="#m1-m2-alignment" title="Permalink to this headline">#</a></h4>
+<p><strong>Dependencies:</strong> Optical axis 1 and optical axis 2. These mirrors co-align the
+two optical axes.</p>
+<p>See TODO (beam steering with two kinematic mirrors) and TODO (aligning a laser
+beam into a beam expander).</p>
+</section>
 </section>
 <section id="beam-expander">
 <h3>Beam expander<a class="headerlink" href="#beam-expander" title="Permalink to this headline">#</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>Manufacturer</p></th>
+<th class="head"><p>Part No</p></th>
+<th class="head"><p>Name</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Beam expander</p></td>
+<td><p>Special Optics</p></td>
+<td><p>56-30-2-8X-1064</p></td>
+<td><p>Variable Zoom Beam Expander</p></td>
+</tr>
+<tr class="row-odd"><td><p>Beam expander mount</p></td>
+<td><p></p></td>
+<td><p>TBD</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<section id="beam-expander-alignment">
+<h4>Beam expander alignment<a class="headerlink" href="#beam-expander-alignment" title="Permalink to this headline">#</a></h4>
+<p><strong>Dependencies:</strong> None. Optical axis 2 will be determined by the beam expander.</p>
+<p>TODO: Magnification adjustment to fill objective back aperture.</p>
 </section>
-<section id="polarization-control">
-<h3>Polarization control<a class="headerlink" href="#polarization-control" title="Permalink to this headline">#</a></h3>
 </section>
-<section id="galvanometer-scanner">
-<h3>Galvanometer scanner<a class="headerlink" href="#galvanometer-scanner" title="Permalink to this headline">#</a></h3>
+<section id="mirror-m3-periscope-m4-m5">
+<h3>Mirror M3; periscope M4-M5<a class="headerlink" href="#mirror-m3-periscope-m4-m5" title="Permalink to this headline">#</a></h3>
+<section id="m3-m5-design-notes">
+<h4>M3-M5 design notes<a class="headerlink" href="#m3-m5-design-notes" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li><p>The Thorlabs periscope assembly has fine tilt adjustment screws only on the
+upper mirror, so we use M3 and M5 to steer the laser beam onto optical axis
+3. Some periscopes (e.g. Newport) have fine tilt adjustment also on the lower
+mirror, in which case M3 is not necessary (adjustment can be done with the
+periscope mirrors M4 and M5).</p></li>
+</ul>
 </section>
-<section id="scan-lens-and-tube-lens">
-<h3>Scan lens and tube lens<a class="headerlink" href="#scan-lens-and-tube-lens" title="Permalink to this headline">#</a></h3>
+<section id="m3-m5-alignment">
+<h4>M3-M5 alignment<a class="headerlink" href="#m3-m5-alignment" title="Permalink to this headline">#</a></h4>
+<p><strong>Dependencies:</strong> Optical axis 2 and optical axis 3-4.</p>
+<p>See TODO (beam steering with two kinematic mirrors) and TODO.</p>
+</section>
+</section>
+<section id="galvanometer-scanners">
+<h3>Galvanometer scanners<a class="headerlink" href="#galvanometer-scanners" title="Permalink to this headline">#</a></h3>
+<p>TODO BOM. Mount should have XYZ translation (no need for micrometers)</p>
+<section id="galvo-alignment">
+<h4>Galvo alignment<a class="headerlink" href="#galvo-alignment" title="Permalink to this headline">#</a></h4>
+<p><strong>Dependencies:</strong> Optical axis 4 and all its components.</p>
+<p>TODO.</p>
+</section>
+</section>
+<section id="scan-lens">
+<h3>Scan lens<a class="headerlink" href="#scan-lens" title="Permalink to this headline">#</a></h3>
+<p>TBD.</p>
+<section id="scan-lens-design-notes">
+<h4>Scan lens design notes<a class="headerlink" href="#scan-lens-design-notes" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li><p>The scan lens should focus a collimated beam at the epi field diaphragm
+(slider slot) position in the LAPP main branch. With a 110-mm focal length
+scan lens, its position should be near the back of the LAPP main branch.</p></li>
+</ul>
+</section>
+<section id="scan-lens-alignment">
+<h4>Scan lens alignment<a class="headerlink" href="#scan-lens-alignment" title="Permalink to this headline">#</a></h4>
+<p><strong>Dependencies:</strong> Optical axis 4.</p>
+<p>See TODO (aligning a scan lens using transmitted illumination).</p>
+</section>
 </section>
 <section id="microscope-body">
 <h3>Microscope body<a class="headerlink" href="#microscope-body" title="Permalink to this headline">#</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>Manufacturer</p></th>
+<th class="head"><p>Part No</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Inverted microscope body</p></td>
+<td><p>Nikon Instruments</p></td>
+<td><p>Eclipse Ti2-E/B</p></td>
+</tr>
+</tbody>
+</table>
+<p>TODO: LAPP details, fixing plate. Filter cube.</p>
+<p><strong>BOM Notes:</strong> The Ti2 can be configured with a large array of options. We use
+the LAPP Main Branch in the epi illumination port; this includes the tube lens
+for the excitation light. Details TBD.</p>
+<section id="microscopy-body-alignment">
+<h4>Microscopy body alignment<a class="headerlink" href="#microscopy-body-alignment" title="Permalink to this headline">#</a></h4>
+<p><strong>Dependencies:</strong> None. Placement determines optical axis 4.</p>
+<p>It is conveninet to fix the microscope so that its front-back center axis is
+aligned to a row of mounting holes on the optical table.</p>
 </section>
-<section id="photomultiplier-tube">
-<h3>Photomultiplier tube<a class="headerlink" href="#photomultiplier-tube" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="emission-beam-splitter">
+<h3>Emission beam splitter<a class="headerlink" href="#emission-beam-splitter" title="Permalink to this headline">#</a></h3>
+<p>TBD.</p>
+</section>
+<section id="photomultiplier-tubes">
+<h3>Photomultiplier tubes<a class="headerlink" href="#photomultiplier-tubes" title="Permalink to this headline">#</a></h3>
+<p>TODO.</p>
 </section>
 </section>
 <section id="electronics">
 <h2>Electronics<a class="headerlink" href="#electronics" title="Permalink to this headline">#</a></h2>
-</section>
-<section id="software">
-<h2>Software<a class="headerlink" href="#software" title="Permalink to this headline">#</a></h2>
+<p>TODO:</p>
+<ul class="simple">
+<li><p>NI DAQ for scan waveforms and PMT signals</p></li>
+<li><p>(optional) BH SPC for FLIM</p></li>
+<li><p>BH DCC-100 (or Hamamatsu) for PMT power supply and control</p></li>
+<li><p>Power supply for PMT preamps</p></li>
+<li><p>Control of shutter and EOM</p></li>
+</ul>
 </section>
 </section>
 
@@ -559,11 +1247,11 @@ SPDX-License-Identifier: CC-BY-SA-4.0
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="obba.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="align.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Conventions for documenting optical breadboard assemblies</p>
+            <p class="prev-next-title">Alignment procedures for optical breadboard assemblies</p>
         </div>
     </a>
 </div>
