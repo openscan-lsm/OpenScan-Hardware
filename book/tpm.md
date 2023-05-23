@@ -110,25 +110,6 @@ from
 Align the device to the pre-existing optical axis 1. Maximize extinction with
 the device reversed 180°. See {ref}`align-eot-isolator`.
 
-### Shutter
-
-| Component       | Manufacturer       | Part No       |
-| --------------- | ------------------ | ------------- |
-| Shutter         | Vincent (Uniblitz) | TBD (VS14?)   |
-| Shutter mount   |                    | TBD           |
-| Shutter driver  | Vincent (Uniblitz) | TBD (VCM-D1?) |
-| Beam dump       | Thorlabs           | LB1           |
-| Beam dump mount |                    | TBD           |
-
-#### Shutter alignment
-
-**Dependencies:** Optical axis 1.
-
-Place such that beam passes through near the center of the aperture when the
-shutter is open. Fix at ~5° from perpendicular to the optical axis, such that
-the reflected beam (when the shutter is closed) is offset from the incoming
-beam. Block the reflected beam with the beam dump.
-
 ### Intensity control: electro-optic modulator (EOM)
 
 The EOM (consisting of a Pockels cell together with a polarizing beam splitter)
@@ -162,6 +143,7 @@ Align the device to the pre-existing optical axis 1. See
 
 - For the EOM, Conoptics 350-80LA, which has a larger, 3.5 mm aperture, may be
   desirable. The 350-80 used here has a 2.7 mm aperture.
+- The Conoptics EOMs can now be purchased with an integrated beam block.
 - The EOM can be purchased with input polarizing beam splitter, in case the
   input beam does not have clean linear polarization. This is not necessary
   when the immediately previous component is the Faraday isolator (whose last
@@ -177,6 +159,28 @@ Align the device to the pre-existing optical axis 1. See
   also be achieved at significantly lower cost using the combination of a
   motorized half-wave plate and a polarizing beam splitter, albeit with slower
   switching.
+- The EOM should be located before the main shutter in the beam path, so that
+  it does not experience temparature shifts when the shutter is opened or
+  closed.
+
+### Shutter
+
+| Component       | Manufacturer       | Part No       |
+| --------------- | ------------------ | ------------- |
+| Shutter         | Vincent (Uniblitz) | TBD (VS14?)   |
+| Shutter mount   |                    | TBD           |
+| Shutter driver  | Vincent (Uniblitz) | TBD (VCM-D1?) |
+| Beam dump       | Thorlabs           | LB1           |
+| Beam dump mount |                    | TBD           |
+
+#### Shutter alignment
+
+**Dependencies:** Optical axis 1.
+
+Place such that beam passes through near the center of the aperture when the
+shutter is open. Fix at ~5° from perpendicular to the optical axis, such that
+the reflected beam (when the shutter is closed) is offset from the incoming
+beam. Block the reflected beam with the beam dump.
 
 ### Polarization control: wave plates
 
