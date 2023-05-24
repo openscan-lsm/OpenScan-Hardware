@@ -92,15 +92,13 @@ essential.
 
 | Component        | Manufacturer              | Part No |
 | ---------------- | ------------------------- | ------- |
-| Faraday isolator | Electro-Optics Technology | TBD     |
+| Faraday isolator | Electro-Optics Technology | BB8-5i  |
 | Isolator mount   |                           | TODO    |
 
-**BOM Notes:** This part is obsolete. Possible substitutes include products
-from
-[Coherent](https://www.coherent.com/components-accessories/rotators-isolators)
-(which acquired EOTech),
-[Conoptics](https://www.conoptics.com/optical-isolators/), or
-[Thorlabs](https://www.thorlabs.com/navigation.cfm?guide_id=2015).
+**BOM Notes:** EOTech is now part of Coherent, but this optical isolator is
+obsolete. It is an isolator designed for Ti:Sapphire lasers. The closest
+equivalent current model is a Coherent EURYS Broadband Faraday Isolator with a
+5 mm aperture.
 
 #### Isolator alignment
 
@@ -109,10 +107,11 @@ from
 **Incoming beam:** Collimated laser beam with linear polarization at 0°
 (horizontal).
 
-**Outgoing beam:** Collimated laser beam with linear polarization at 45°.
+**Outgoing beam:** Collimated laser beam with linear polarization at 90°
+(vertical).
 
-Align the device to the pre-existing optical axis 1. Maximize extinction with
-the device reversed 180°. See {ref}`align-eot-isolator`.
+Align the device to the pre-existing optical axis 1. See
+{ref}`align-eot-isolator`.
 
 ### Intensity control: electro-optic modulator (EOM)
 
@@ -136,9 +135,11 @@ minimum transmission near zero bias voltage.
 **Dependencies:** Optical axis 1. Usually the upstream optical isolator should
 be aligned first.
 
-**Incoming beam:** Collimated laser beam with linear polarization at 45°.
+**Incoming beam:** Collimated laser beam with linear polarization at 90°
+(vertical).
 
-**Outgoing beam:** Collimated laser beam with linear polarization at 45°.
+**Outgoing beam:** Collimated laser beam with linear polarization at 0°
+(horizontal).
 
 Align the device to the pre-existing optical axis 1. See
 {ref}`align-eom-conoptics`.
