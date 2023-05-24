@@ -133,6 +133,8 @@ and extensions.
   require changes to the whole
   - Especially helpful in collaboration, GitHub pull requests
 - Clarifies required skills and knowledge
+- Description is inseparable from design. Modular designs are more amenable to
+  future realignment, repair, and modification.
 
 ### Separation of concerns
 
@@ -150,7 +152,10 @@ and extensions.
 
 ### Practical tradeoffs
 
-- Not all components need to have the best fine adjustment for aligning
+- Not all components need to have the highest-precision fine and/or independent
+  adjustments for aligning.
+- Fixed optomechanical components are more stable than adjustable ones, and can
+  often be aligned to ~0.1 mm precision by hand.
 
 ### Optomechanical systems
 

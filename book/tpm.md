@@ -60,6 +60,10 @@ mounting holes tapped for 1/4-20.
 
 TODO: More details; 8-inch hole if using bottom port.
 
+- The optical table will very slightly deform when heavy items are placed on
+  it, or when it is floated vs not floated. Alignment should therefore be done
+  after fixing heavy components and floating the table.
+
 ### Ultrafast pulsed laser
 
 | Component                     | Manufacturer    | Part No    |
@@ -225,6 +229,11 @@ full system to be built so that specimens can be imaged.)
 
 Place the two wave plates perpendicular to optical axis 1, centered around the
 beam.
+
+TODO: Back reflection must overlap with the beam (link to alignment section)
+
+TODO: Obtaining circularly polarized light at the QWP (use PBS, power meter,
+and mirror; link to alignment section)
 
 TODO: Polarization adjustment procedure using giant unilamellar vesicles.
 
