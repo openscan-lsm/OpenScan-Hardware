@@ -20,11 +20,14 @@ reverse direction (output polarizer).
 **Degrees of freedom:** X, Y, yaw, roll (pitch can usually be fixed, assuming
 beam parallel to table); angle between polarizers; rotation angle (some models)
 
-Optical isolators (of the polarization-dependent type discussed here) consist
-of a Faraday rotator flanked by two polarizers (often polarizing beam
-splitters). One or both of the polarizers may be rotated (roll) relative to the
-Faraday rotator; the roll angle of the Faraday rotator itself does not affect
-alignment.
+These generic instructions assume a polarization-dependent Faraday isolator
+that rotates the polarization by 45°. Not all optical isolators are designed
+this way, so make sure to check the manufacturer documentation.
+
+These optical isolators consist of a Faraday rotator flanked by two polarizers
+(often polarizing beam splitters). One or both of the polarizers may be rotated
+(roll axis) relative to the Faraday rotator; the roll angle of the Faraday
+rotator itself does not affect alignment.
 
 Some optical isolators (the "adjustable" or "tunable" type) have an additional
 adjustment for the angle of rotation by the Faraday rotator; this can be used
@@ -62,9 +65,23 @@ beam).
 
 (align-eot-isolator)=
 
-#### Aligning an EOTech Faraday isolator
+#### Aligning an EOTech broadband Faraday isolator
 
-TODO.
+**Readout:** Laser power transmitted by the device in forward direction.
+
+**Alignment goal:** Maximum transmission in forward direction.
+
+**Degrees of freedom:** X, Y, yaw (for pitch and roll, we rely on the
+mechanical accuracy of the device and mount)
+
+Unlike standard Faraday isolators that rotate the polarization by 45°, EOTech
+braodband isolators designed for Ti:Sapphire lasers (BB8 or BB9 series) have a
+fixed input polarization at 0° (horizontal) and output polarization at 90°
+(vertical).
+
+For these devices, there is no need to adjust the polarizers; alignment
+consists simply of positioning the device such that the laser beam passes
+through the device without being clipped.
 
 ### Aligning an electro-optic modulator (EOM)
 

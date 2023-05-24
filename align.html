@@ -312,8 +312,8 @@ title="Print to PDF"
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#aligning-an-eotech-faraday-isolator">
-       Aligning an EOTech Faraday isolator
+      <a class="reference internal nav-link" href="#aligning-an-eotech-broadband-faraday-isolator">
+       Aligning an EOTech broadband Faraday isolator
       </a>
      </li>
     </ul>
@@ -386,8 +386,8 @@ title="Print to PDF"
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#aligning-an-eotech-faraday-isolator">
-       Aligning an EOTech Faraday isolator
+      <a class="reference internal nav-link" href="#aligning-an-eotech-broadband-faraday-isolator">
+       Aligning an EOTech broadband Faraday isolator
       </a>
      </li>
     </ul>
@@ -458,11 +458,13 @@ wavelength tuning); 45° rotation (if adjustable); minimum transmission in
 reverse direction (output polarizer).</p>
 <p><strong>Degrees of freedom:</strong> X, Y, yaw, roll (pitch can usually be fixed, assuming
 beam parallel to table); angle between polarizers; rotation angle (some models)</p>
-<p>Optical isolators (of the polarization-dependent type discussed here) consist
-of a Faraday rotator flanked by two polarizers (often polarizing beam
-splitters). One or both of the polarizers may be rotated (roll) relative to the
-Faraday rotator; the roll angle of the Faraday rotator itself does not affect
-alignment.</p>
+<p>These generic instructions assume a polarization-dependent Faraday isolator
+that rotates the polarization by 45°. Not all optical isolators are designed
+this way, so make sure to check the manufacturer documentation.</p>
+<p>These optical isolators consist of a Faraday rotator flanked by two polarizers
+(often polarizing beam splitters). One or both of the polarizers may be rotated
+(roll axis) relative to the Faraday rotator; the roll angle of the Faraday
+rotator itself does not affect alignment.</p>
 <p>Some optical isolators (the “adjustable” or “tunable” type) have an additional
 adjustment for the angle of rotation by the Faraday rotator; this can be used
 to tune the isolator for specific wavelengths (because the angle of rotation is
@@ -496,9 +498,19 @@ centered through the device).</p></li>
 <li><p>Set up beam dumps to block the rejected light exiting from the two polarizing
 beam splitters.</p></li>
 </ul>
-<section id="aligning-an-eotech-faraday-isolator">
-<span id="align-eot-isolator"></span><h4>Aligning an EOTech Faraday isolator<a class="headerlink" href="#aligning-an-eotech-faraday-isolator" title="Permalink to this headline">#</a></h4>
-<p>TODO.</p>
+<section id="aligning-an-eotech-broadband-faraday-isolator">
+<span id="align-eot-isolator"></span><h4>Aligning an EOTech broadband Faraday isolator<a class="headerlink" href="#aligning-an-eotech-broadband-faraday-isolator" title="Permalink to this headline">#</a></h4>
+<p><strong>Readout:</strong> Laser power transmitted by the device in forward direction.</p>
+<p><strong>Alignment goal:</strong> Maximum transmission in forward direction.</p>
+<p><strong>Degrees of freedom:</strong> X, Y, yaw (for pitch and roll, we rely on the
+mechanical accuracy of the device and mount)</p>
+<p>Unlike standard Faraday isolators that rotate the polarization by 45°, EOTech
+braodband isolators designed for Ti:Sapphire lasers (BB8 or BB9 series) have a
+fixed input polarization at 0° (horizontal) and output polarization at 90°
+(vertical).</p>
+<p>For these devices, there is no need to adjust the polarizers; alignment
+consists simply of positioning the device such that the laser beam passes
+through the device without being clipped.</p>
 </section>
 </section>
 <section id="aligning-an-electro-optic-modulator-eom">
