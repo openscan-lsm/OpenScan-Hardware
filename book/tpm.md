@@ -23,11 +23,11 @@ TODO Diagram (and photographs).
 
 #### Optical axis 1: laser control and modulation
 
-Parallel to table at ~100 mm height. Established by Ti:Sapphire laser emission.
+Parallel to table at ~110 mm height. Established by Ti:Sapphire laser emission.
 
 #### Optical axis 2: beam expander
 
-Parallel to table at ~100 mm height. Determined by beam expander placement.
+Parallel to table at ~110 mm height. Determined by beam expander placement.
 Aligned using mirrors M1 and M2.
 
 #### Optical axis 3: galvanometer scanner input
