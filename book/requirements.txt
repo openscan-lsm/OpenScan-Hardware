@@ -3,5 +3,4 @@
 # SPDX-License-Identifier: CC-BY-SA-4.0
 
 jupyter-book<0.14
-matplotlib
-numpy
+sphinxcontrib-mermaid

@@ -19,6 +19,11 @@ limitation is that you don't have full control over the optics (tube lenses).
 
 TODO Diagram (and photographs).
 
+```{mermaid}
+    flowchart LR
+      todo --> here
+```
+
 ### Optical axes
 
 #### Optical axis 1: laser control and modulation
