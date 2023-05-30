@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="prev" title="Alignment procedures for optical breadboard assemblies" href="align.html" />
@@ -783,7 +785,10 @@ limitation is that you don’t have full control over the optics (tube lenses).<
 <section id="overall-layout">
 <h2>Overall layout<a class="headerlink" href="#overall-layout" title="Permalink to this headline">#</a></h2>
 <p>TODO Diagram (and photographs).</p>
-<section id="optical-axes">
+<div class="mermaid">
+                flowchart LR
+      todo --&gt; here
+        </div><section id="optical-axes">
 <h3>Optical axes<a class="headerlink" href="#optical-axes" title="Permalink to this headline">#</a></h3>
 <section id="optical-axis-1-laser-control-and-modulation">
 <h4>Optical axis 1: laser control and modulation<a class="headerlink" href="#optical-axis-1-laser-control-and-modulation" title="Permalink to this headline">#</a></h4>
