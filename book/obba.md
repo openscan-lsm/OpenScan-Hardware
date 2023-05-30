@@ -38,10 +38,9 @@ generally mean systems built on optical breadboards, with or without a
 microscope body. This is in contrast to many successful open source hardware
 microscope projects {cite}`Eisenstein2021` which aim either to provide a
 modular platform (TODO Cite) or to provide a tightly refined and/or low-cost
-design for a particular technique (TODO Cite).
-
-TODO: Such projects could be used in combination with our approach here for the
-breadboard portion, as the microscope body
+design for a particular technique (TODO Cite). (Such projects can, or course,
+be used in combination with our approach here, as one component of a larger
+system.)
 
 We believed that there is a niche for a complementary approach where
 off-the-shelf parts[^ots-oshw] are preferred whereever possible, and the
@@ -81,20 +80,26 @@ guide).
 
 ## On modularity
 
-Modularity is sometimes confused with being composed of components that present
-specifically engineered interfaces that plug into a system, in the manner of
-Lego blocks or Tinkertoy sets. That is one useful way to achieve
-interchangeable subsystems, but comes at a cost: any new component must first
-be reengineered to work with the specific interface before it is integrated.
-This can be a hurdle when prototyping a technique.
+We want the optical systems we build to be modular and to be documented in a
+fashion that clearly exhibits the modularity. In a modular system,
 
-TODO: Term this "stackable" design? See if it well describes existing
-approaches.
+- It is easier to understand the whole system because each component is
+  abstracted and the interrelationship between them is made explicit.
+- Changing a specific component or aspect of the system is less likely to
+  require changes to the whole. This is not only beneficial for initial
+  development, but facilitates adoption/adaptation by others as well as open,
+  collaborative development.
+- The skills and knowledge required to assemble the system are easier to
+  clarify.
 
-TODO: The other extreme is that "anything built from component parts is
-modular" in a sense. What makes modularity useful is the ability to work on, or
-replace, components without affecting the rest of the system (at all, or more
-than is unavoidable).
+Modularity is sometimes confused (in this writer's opinion) with being composed
+of components that present specifically engineered interfaces that plug into a
+system, in the manner of Lego blocks or Tinkertoy sets. That is one very useful
+way to achieve interchangeable subsystems, but comes at a cost: any new
+component must first be reengineered to work with the specific interface before
+it is integrated. This can be a hurdle when prototyping a technique or when the
+goal is not to develop a marketable product but to build an instrument that can
+be used to collect data in your own lab.
 
 A different tradeoff can be made by consciously making use of what might be
 called _universal interfaces_: interfaces that are simple and so widely used
@@ -108,9 +113,9 @@ universal, depending on the context.
 
 What these universal interfaces have in common is that while they require a
 little more expertise on the part of the user than solutions intended for "end
-users", they offer vastly more power and flexibility. They serve as a lingua
-franca for modules, allowing components to be combined even if they were not
-explicitly designed to work together.
+users", they offer vastly more power and flexibility with much less engineering
+overhead. They serve as a lingua franca for modules, allowing components to be
+combined even if they were not explicitly designed to work together.
 
 Optical systems have a universal interface: the light beam and its geometry.
 The exact properties of the beam (for example, polarization) that need to be
@@ -125,50 +130,46 @@ the part of the writer, it greatly reduces the amount of nonessential
 engineering required and keeps the design maximally flexible for modifications
 and extensions.
 
-### Why we need modular descriptions
+## Modular description of optical breadboard builds
 
-- Easier to understand when the interrelationship between components is made
-  explicit
-- Changing a specific component or aspect of the system is less likely to
-  require changes to the whole
-  - Especially helpful in collaboration, GitHub pull requests
-- Clarifies required skills and knowledge
-- Description is inseparable from design. Modular designs are more amenable to
-  future realignment, repair, and modification.
+How might we create such descriptions?
 
-### Separation of concerns
+The basic idea is what any developer of an optical system would intuitively do:
+decide what the major components of the system need to be, how they should be
+laid out, how they need to be aligned and otherwise adjusted. This is usually
+an iterative process, and too often only the final result gets documented (if
+that), because there are so many moving parts and a lot of implicit knowledge
+of their interrelationships go into aligning the system. We propose a style of
+documentation that makes these interrelationships more explicit.
 
-- Avoid intermingling overall design and layout considerations with placement
-  and alignment of individual components
+This involves separating out, or otherwise clearly indicating, several pieces
+of information:
 
-### Degrees of freedom
-
-- Importance of thinking in terms of DoFs and making it explicit in build
-  description
-  - When the correct adjustments are provided, layout can be made flexible
-    (e.g. add or remove mirrors)
-- Collimated laser beam: position, orientation
-  - But also polarization, beam diameter, etc.
-
-### Practical tradeoffs
-
-- Not all components need to have the highest-precision fine and/or independent
-  adjustments for aligning.
-- Fixed optomechanical components are more stable than adjustable ones, and can
-  often be aligned to ~0.1 mm precision by hand.
-
-### Optomechanical systems
-
-- Free-space, cage, lens tubes
-
-### Overall layout and design
-
-- ...
-- Breadboard coordinates (used in auxiliary, not primary, role)
-
-## Optical alignment
+- Keep descriptions of individual components separated from overall layout.
+- Keep exact component positions (if given) separated from the logical (block
+  diagram) layout. The latter may be reused in builds that cannot exactly
+  replicate the former due to various constraints.
+- Indicate alignment goals separately from component identity and specs.
+  Alignment goals describe the relationship of the component with others in the
+  system, so this is a way of saying: separate interface from implementation.
+- Keep alignment _instructions_ separated from component specs and placement.
+  Whenever practical, these should be written so that they can be understood
+  (and potentially reused) outside of the context of any particular build or
+  design. Some alignment procedures will necessarily be specific to particular
+  components (but preferably not the particular build); others can be more
+  generic.
+- Component descriptions should specify alignment dependencies, i.e., which
+  other components or subsystems need to be aligned before aligning the
+  component in question.
 
 ### Documenting alignment procedures
+
+Alignment is the task of bringing each component into the correct (mainly
+geometrical) relationship to all of the other components. It is therefore not
+always easy or possible to talk about the alignment of a single component in
+isolation. And because each alignment procedure, taken as a whole, defines the
+relationship between components (which is a desired state, not a process), it
+makes sense to treat the procedure as an independent unit.
 
 We want to provide concrete [instructions](./align.md) for how to align optical
 components, but we do not want to end up with a long set of instructions to be
@@ -183,9 +184,14 @@ procedure we describe:
     iris.
 - The goal/target of the alignment procedure must be clearly defined in terms
   of the readout.
-- It must be clear which degrees of freedom are being adjusted.
-  - Not all of the DoFs may have/require independent adjustments and/or fine
-    adjustments. But these relationships should be noted.
+- Alignment procedures should indicate the degrees of freedom being
+  adjusted/optimized and which of those require fine adjustments (and, in some
+  cases, how fine) and/or independent adjustments (and why, including any known
+  tradeoffs).
+  - This is valuable information because fine and independent adjustments
+    require more expensive components, yet may be less stable than
+    non-adjustable mounts. In many cases, components without adjustment screws
+    can be hand-aligned to ~0.1 mm precision if a good readout is available.
 - The goal/target of the alignment must constrain all of the degrees of freedom
   being adjusted.
   - If this is not the case, the alignment could be "finished" and yet end up
