@@ -32,3 +32,14 @@ jupyter-book build book
 ```
 
 The HTML site is generated at `book/_build/html/index.html`.
+
+We use a [pre-commit](https://pre-commit.com/) hook to automatically normalize
+formatting and perform a few checks when creating Git commits. To set this up:
+
+```sh
+pre-commit install
+```
+
+(If you don't have the `pre-commit` command globally installed, you can install
+it in the virtual environment using `pip install pre-commit` and it should work
+as long as the virtual environment is activated when you commit.)
