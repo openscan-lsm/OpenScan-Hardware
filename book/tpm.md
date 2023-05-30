@@ -17,11 +17,62 @@ limitation is that you don't have full control over the optics (tube lenses).
 
 ## Overall layout
 
-TODO Diagram (and photographs).
+The overall layout of a simple two-photon microscope for fluorescence lifetime imaging is as follows:
 
 ```{mermaid}
     flowchart LR
-      todo --> here
+%%      subgraph Illumination ["Illumination beam line"]
+      Laser["Ti:Sapphire Laser"] --> Isolator;
+      Isolator["Isolator"] --> EOM;
+      EOM("Electro-optic modulator") --> Shutter;
+      Shutter --> Dump[Beam dump];
+      EOM --> EOMDump[Beam dump];
+      Shutter --> HWP;   
+      HWP("Half wave plate") --> QWP;
+      QWP("Quarter wave plate")  --> Mirror1("Mirror M1");
+      Mirror1_break("Mirror M1") --> Mirror2;
+      Mirror2("Mirror M2") --> Expander;
+      Expander("Beam Expander") --> Tap;
+      Tap["Tap Beam Splitter"] --> Mirror3("Mirror M3");
+      Mirror3 --> Periscope(("Periscope
+      (M4, M5)"));
+      Periscope_break(("Periscope
+      (M4, M5)")) -->Galvos;
+      Galvos("Galvo mirrors") -->Scan;
+%%      end
+      Scan("Scan Lens") --> EpiTube;
+%%      subgraph MB ["Microscope base"];
+      EpiTube("Tube Lens") --> EpiDM;
+        EpiDM["Dichroic mirror"] <--> Objective;
+        Objective("Obj") <--> Sample;
+        EpiDM -->PMTTube;
+%%      end
+    PMTTube("Tube Lens") -->Filter;
+%%      subgraph PMTA ["Camera line"]
+      Filter("Filter");
+          Filter -->PMT;
+          PMT("PMT")-.-Datalines-.-BH("SPC boards");
+%%      end
+%% Subgraphs commented because including them causes the diagram to run bottom to top.
+
+%% Links to main body sections
+    click Laser href "#ultrafast-pulsed-laser" _blank
+    click Isolator href "#optical-isolator" _blank
+    click EOM href "#intensity-control-electro-optic-modulator-eom" _blank
+    click Shutter href "#shutter-alignment" _blank
+    click HWP href "#polarization-control-wave-plates" _blank
+    click QWP href "#polarization-control-wave-plates" _blank
+    click Mirror1 href "#mirrors-m1-m2" _blank
+    click Mirror2 href "#mirrors-m1-m2" _blank
+    click Expander href "#beam-expander" _blank
+    click Periscope_break href "#mirror-m3-periscope-m4-m5" _blank
+    click Periscope href "#mirror-m3-periscope-m4-m5" _blank
+    click Galvos href "#Galvanometer-scanners" _blank
+    click Scan href "#scan-lens" _blank
+    click EpiTube href "#microscope-body" _blank
+    click PMTTube "#photomultiplier-tubes" _blank
+    click PMT href "#photomultiplier-tubes" _blank
+    click BH href "#electronics" _blank
 ```
 
 ### Optical axes
