@@ -296,8 +296,9 @@ TBD.
 #### Scan lens design notes
 
 - The scan lens should focus a collimated beam at the epi field diaphragm
-  (slider slot) position in the LAPP main branch. With a 110-mm focal length
-  scan lens, its position should be near the back of the LAPP main branch.
+  (slider slot) position in the LAPP main branch. This requires a scan lens
+  with a focal length of at least ~120 mm (exact requirement for mechanical
+  clearance may be slightly larger).
 
 #### Scan lens alignment
 
