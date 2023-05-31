@@ -784,10 +784,62 @@ limitation is that you don’t have full control over the optics (tube lenses).<
 </section>
 <section id="overall-layout">
 <h2>Overall layout<a class="headerlink" href="#overall-layout" title="Permalink to this headline">#</a></h2>
-<p>TODO Diagram (and photographs).</p>
+<p>The overall layout of a simple two-photon microscope for fluorescence lifetime
+imaging is as follows:</p>
 <div class="mermaid">
                 flowchart LR
-      todo --&gt; here
+%%      subgraph Illumination [&quot;Illumination beam line&quot;]
+      Laser[&quot;Ti:Sapphire Laser&quot;] --&gt; Isolator;
+      Isolator[&quot;Isolator&quot;] --&gt; EOM;
+      EOM(&quot;Electro-optic modulator&quot;) --&gt; Shutter;
+      Shutter --&gt; Dump[Beam dump];
+      EOM --&gt; EOMDump[Beam dump];
+      Shutter --&gt; HWP;   
+      HWP(&quot;Half wave plate&quot;) --&gt; QWP;
+      QWP(&quot;Quarter wave plate&quot;)  --&gt; Mirror1(&quot;Mirror M1&quot;);
+      Mirror1_break(&quot;Mirror M1&quot;) --&gt; Mirror2;
+      Mirror2(&quot;Mirror M2&quot;) --&gt; Expander;
+      Expander(&quot;Beam Expander&quot;) --&gt; Tap;
+      Tap[&quot;Tap Beam Splitter&quot;] --&gt; Mirror3(&quot;Mirror M3&quot;);
+      Mirror3 --&gt; Periscope((&quot;Periscope
+      (M4, M5)&quot;));
+      Periscope_break((&quot;Periscope
+      (M4, M5)&quot;)) --&gt;Galvos;
+      Galvos(&quot;Galvo mirrors&quot;) --&gt;Scan;
+%%      end
+      Scan(&quot;Scan Lens&quot;) --&gt; EpiTube;
+%%      subgraph MB [&quot;Microscope base&quot;];
+      EpiTube(&quot;Tube Lens&quot;) --&gt; EpiDM;
+        EpiDM[&quot;Dichroic mirror&quot;] &lt;--&gt; Objective;
+        Objective(&quot;Obj&quot;) &lt;--&gt; Sample;
+        EpiDM --&gt;PMTTube;
+%%      end
+    PMTTube(&quot;Tube Lens&quot;) --&gt;Filter;
+%%      subgraph PMTA [&quot;Camera line&quot;]
+      Filter(&quot;Filter&quot;);
+          Filter --&gt;PMT;
+          PMT(&quot;PMT&quot;)-.-Datalines-.-BH(&quot;SPC boards&quot;);
+%%      end
+%% Subgraphs commented because including them causes the diagram to run bottom to top.
+
+%% Links to main body sections
+    click Laser href &quot;#ultrafast-pulsed-laser&quot; _blank
+    click Isolator href &quot;#optical-isolator&quot; _blank
+    click EOM href &quot;#intensity-control-electro-optic-modulator-eom&quot; _blank
+    click Shutter href &quot;#shutter-alignment&quot; _blank
+    click HWP href &quot;#polarization-control-wave-plates&quot; _blank
+    click QWP href &quot;#polarization-control-wave-plates&quot; _blank
+    click Mirror1 href &quot;#mirrors-m1-m2&quot; _blank
+    click Mirror2 href &quot;#mirrors-m1-m2&quot; _blank
+    click Expander href &quot;#beam-expander&quot; _blank
+    click Periscope_break href &quot;#mirror-m3-periscope-m4-m5&quot; _blank
+    click Periscope href &quot;#mirror-m3-periscope-m4-m5&quot; _blank
+    click Galvos href &quot;#Galvanometer-scanners&quot; _blank
+    click Scan href &quot;#scan-lens&quot; _blank
+    click EpiTube href &quot;#microscope-body&quot; _blank
+    click PMTTube &quot;#photomultiplier-tubes&quot; _blank
+    click PMT href &quot;#photomultiplier-tubes&quot; _blank
+    click BH href &quot;#electronics&quot; _blank
         </div><section id="optical-axes">
 <h3>Optical axes<a class="headerlink" href="#optical-axes" title="Permalink to this headline">#</a></h3>
 <section id="optical-axis-1-laser-control-and-modulation">
