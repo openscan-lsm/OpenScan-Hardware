@@ -28,7 +28,7 @@ imaging is as follows:
       EOM("Electro-optic modulator") --> Shutter;
       Shutter --> Dump[Beam dump];
       EOM --> EOMDump[Beam dump];
-      Shutter --> HWP;   
+      Shutter --> HWP;
       HWP("Half wave plate") --> QWP;
       QWP("Quarter wave plate")  --> Mirror1("Mirror M1");
       Mirror1_break("Mirror M1") --> Mirror2;
