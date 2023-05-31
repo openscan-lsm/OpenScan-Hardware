@@ -2,5 +2,9 @@
 # Copyright 2023 OpenScan Contributors
 # SPDX-License-Identifier: CC-BY-SA-4.0
 
-jupyter-book<0.14
-sphinxcontrib-mermaid
+root = true
+
+[*]
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
