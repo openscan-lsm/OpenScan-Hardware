@@ -17,7 +17,8 @@ limitation is that you don't have full control over the optics (tube lenses).
 
 ## Overall layout
 
-The overall layout of a simple two-photon microscope for fluorescence lifetime imaging is as follows:
+The overall layout of a simple two-photon microscope for fluorescence lifetime
+imaging is as follows:
 
 ```{mermaid}
     flowchart LR
