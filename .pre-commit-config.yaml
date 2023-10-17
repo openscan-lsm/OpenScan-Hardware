@@ -4,16 +4,16 @@
 
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.3.0
+    rev: v4.5.0
     hooks:
       - id: check-yaml
   - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
-    rev: 2.4.0
+    rev: 2.7.3
     hooks:
       - id: editorconfig-checker
         alias: ec
   - repo: https://github.com/executablebooks/mdformat
-    rev: 0.7.16
+    rev: 0.7.17
     hooks:
       - id: mdformat
         additional_dependencies:
@@ -26,6 +26,6 @@ repos:
         args: ["--wrap=79", "--end-of-line=keep"]
         exclude: '^(?!book/.*)$'
   - repo: https://github.com/fsfe/reuse-tool
-    rev: v1.0.0
+    rev: v2.1.0
     hooks:
       - id: reuse
